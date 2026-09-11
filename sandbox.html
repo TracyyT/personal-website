@@ -5,314 +5,856 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Bagel's Corner | Tracy Tran</title>
+    <title>Bagel's Life | Tracy Tran</title>
+
+    <!-- playful fonts just for Bagel's website -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Patrick+Hand&display=swap"
+          rel="stylesheet">
 
     <style>
+
         * {
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             margin: 0;
-            background-color: #fff8f0;
-            color: #51463e;
-            font-family: Arial, Helvetica, sans-serif;
+            background-color: #fffaf0;
+            color: #4c2923;
+            font-family: "Patrick Hand", cursive;
         }
 
-        /* Navigation */
 
-        .navbar {
-            height: 65px;
-            padding: 0 6%;
+        /* =====================================================
+           BAGEL'S OWN NAVIGATION
+           ===================================================== */
+
+        .bagel-navbar {
+            min-height: 72px;
+            padding: 10px 5%;
+
             display: flex;
             align-items: center;
-            background-color: rgba(246, 240, 232, 0.96);
-            border-bottom: 1px solid #ded1c4;
-            z-index: 10;
+
+            background-color: #fffdf7;
+            border-bottom: 3px solid #f0d8c5;
+
+            position: relative;
+            z-index: 20;
         }
 
-        .nav-links {
+        .bagel-logo {
             display: flex;
-            gap: clamp(18px, 3vw, 45px);
-        }
+            align-items: center;
+            gap: 9px;
 
-        .nav-links a {
-            color: #6d6057;
+            color: #9d2924;
+
+            font-family: "Chewy", cursive;
+            font-size: 28px;
+
             text-decoration: none;
-            font-size: 12px;
-            letter-spacing: 0.5px;
         }
 
-        .nav-links a:hover {
-            color: #9a735c;
+        .bagel-logo span {
+            font-size: 30px;
         }
 
-        .nav-links .active {
-            color: #805f4b;
-            border-bottom: 1px solid #805f4b;
-            padding-bottom: 1px;
-        }
+        .bagel-nav-links {
+            margin-left: 65px;
 
-        /* Sandbox */
-
-        .sandbox-page {
-            min-height: calc(100vh - 65px);
-            position: relative;
-            overflow: hidden;
-            padding: 70px 7%;
-        }
-
-        .sandbox-header {
-            max-width: 750px;
-            margin: 0 auto 45px;
-            text-align: center;
-        }
-
-        .eyebrow {
-            margin: 0 0 10px;
-            color: #a17d67;
-            font-size: 11px;
-            font-weight: bold;
-            letter-spacing: 2px;
-        }
-
-        h1 {
-            margin: 0;
-            color: #4f4138;
-            font-family: Georgia, "Times New Roman", serif;
-            font-size: 50px;
-            font-weight: normal;
-        }
-
-        .sandbox-header p:last-child {
-            color: #746960;
-            font-size: 13px;
-            line-height: 1.7;
-        }
-
-        /* Bagel Card */
-
-        .bagel-card {
-            max-width: 750px;
-            margin: 0 auto;
-            padding: 45px;
-            background-color: #f1e5d9;
-            border: 1px solid #d9cabe;
-            border-radius: 25px;
-            text-align: center;
-            position: relative;
-            box-shadow: 0 15px 35px rgba(87, 67, 54, 0.1);
-        }
-
-        .dog-icon {
-            width: 95px;
-            height: 95px;
-            margin: 0 auto 20px;
             display: flex;
             align-items: center;
-            justify-content: center;
-            background-color: #dfcdbd;
-            border-radius: 50%;
-            font-size: 45px;
+            gap: 38px;
         }
 
-        .bagel-card h2 {
-            margin: 0 0 10px;
-            color: #654f41;
-            font-family: Georgia, "Times New Roman", serif;
-            font-size: 30px;
-            font-weight: normal;
+        .bagel-nav-links a {
+            padding: 8px 15px;
+
+            color: #4c2923;
+
+            font-size: 18px;
+            text-decoration: none;
+
+            border-radius: 12px;
+
+            transition: 0.2s;
         }
 
-        .bagel-intro {
-            max-width: 500px;
-            margin: 0 auto 25px;
-            color: #746960;
-            font-size: 12px;
-            line-height: 1.8;
+        .bagel-nav-links a:hover {
+            background-color: #ffe2df;
+            transform: rotate(-2deg);
         }
 
-        .bagel-facts {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 28px;
+        .bagel-nav-links .active {
+            background-color: #ffd7d5;
+            color: #a52b27;
         }
 
-        .bagel-facts span {
-            padding: 8px 14px;
-            background-color: #fffaf4;
-            border: 1px solid #d5c3b4;
-            border-radius: 20px;
-            color: #765a49;
-            font-size: 11px;
+
+        /* special link that returns to my real portfolio */
+
+        .back-home {
+            margin-left: auto;
+
+            padding: 10px 17px;
+
+            color: #355a75;
+
+            border: 2px dashed #82afd0;
+            border-radius: 18px;
+
+            font-size: 16px;
+            text-decoration: none;
+
+            transition: 0.2s;
         }
 
-        /* Pet Button */
-
-        .pet-button {
-            padding: 12px 25px;
-            background-color: #8c6a55;
-            color: #fffaf5;
-            border: none;
-            border-radius: 30px;
-            font-size: 13px;
-            cursor: pointer;
-            transition: 0.25s;
-        }
-
-        .pet-button:hover {
-            background-color: #705342;
+        .back-home:hover {
+            background-color: #e0f3ff;
             transform: translateY(-2px);
         }
 
-        #pet-message {
-            min-height: 20px;
-            margin: 15px 0 0;
-            color: #8c6a55;
-            font-family: Georgia, "Times New Roman", serif;
-            font-size: 14px;
-            font-style: italic;
+
+        /* =====================================================
+           HERO
+           ===================================================== */
+
+        .bagel-hero {
+            min-height: 520px;
+            padding: 55px 8%;
+
+            display: grid;
+            grid-template-columns: 1fr 0.9fr;
+            align-items: center;
+            gap: 60px;
+
+            position: relative;
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    rgba(222, 242, 255, 0.4),
+                    rgba(255, 250, 240, 0.9)
+                ),
+                #dff2ff;
         }
 
-        /* Prompt */
+
+        /* little mountain shapes */
+
+        .mountain {
+            position: absolute;
+
+            width: 0;
+            height: 0;
+
+            border-left: 150px solid transparent;
+            border-right: 150px solid transparent;
+            border-bottom: 210px solid #9fc5cf;
+
+            opacity: 0.35;
+        }
+
+        .mountain-one {
+            right: 2%;
+            bottom: 0;
+        }
+
+        .mountain-two {
+            right: 20%;
+            bottom: -40px;
+
+            transform: scale(1.3);
+
+            border-bottom-color: #86af98;
+        }
+
+
+        /* text */
+
+        .hero-copy {
+            position: relative;
+            z-index: 3;
+        }
+
+        .tiny-message {
+            margin: 0 0 5px;
+
+            color: #765047;
+
+            font-size: 20px;
+
+            transform: rotate(-2deg);
+        }
+
+        .bagel-hero h1 {
+            margin: 0;
+
+            color: #6f241b;
+
+            font-family: "Chewy", cursive;
+            font-size: clamp(65px, 8vw, 105px);
+            font-weight: normal;
+            line-height: 0.9;
+        }
+
+        .adventure-line {
+            margin: 22px 0 13px;
+
+            color: #a8322b;
+
+            font-family: "Chewy", cursive;
+            font-size: 26px;
+            word-spacing: 10px;
+        }
+
+        .bagel-intro {
+            max-width: 520px;
+
+            margin: 0 0 25px;
+
+            color: #4b4d57;
+
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+
+        /* explore button */
+
+        .explore-button {
+            display: inline-block;
+
+            padding: 13px 28px;
+
+            background-color: #ef767a;
+            color: white;
+
+            border: 3px solid white;
+            border-radius: 30px;
+
+            box-shadow: 0 5px 0 #c95055;
+
+            font-size: 19px;
+            text-decoration: none;
+
+            transition: 0.2s;
+        }
+
+        .explore-button:hover {
+            transform: translateY(-3px);
+
+            box-shadow: 0 8px 0 #c95055;
+        }
+
+
+        /* =====================================================
+           BAGEL CARD
+           ===================================================== */
+
+        .bagel-photo-area {
+            display: flex;
+            justify-content: center;
+
+            position: relative;
+            z-index: 3;
+        }
+
+        .bagel-card {
+            width: 350px;
+
+            padding: 15px 15px 22px;
+
+            background-color: #fffdf5;
+
+            border: 3px solid #f1d1aa;
+            border-radius: 12px;
+
+            box-shadow: 12px 12px 0 rgba(107, 71, 46, 0.16);
+
+            text-align: center;
+
+            transform: rotate(3deg);
+        }
+
+        .bagel-emoji {
+            min-height: 275px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background-color: #d8ecce;
+
+            border-radius: 7px;
+
+            font-size: 145px;
+        }
+
+        .bagel-card p {
+            margin: 14px 0 0;
+
+            color: #6d4137;
+
+            font-size: 20px;
+        }
+
+        .tape {
+            width: 90px;
+            height: 25px;
+
+            position: absolute;
+            top: -10px;
+            left: 50%;
+
+            background-color: rgba(239, 180, 120, 0.75);
+
+            transform: translateX(-50%) rotate(-5deg);
+        }
+
+
+        /* =====================================================
+           THREE ADVENTURE CARDS
+           ===================================================== */
+
+        .adventure-section {
+            padding: 55px 7% 70px;
+
+            background-color: #fff7e8;
+        }
+
+        .section-heading {
+            margin-bottom: 35px;
+
+            text-align: center;
+        }
+
+        .section-heading p {
+            margin: 0;
+
+            color: #df7772;
+
+            font-size: 16px;
+        }
+
+        .section-heading h2 {
+            margin: 4px 0 0;
+
+            color: #71291f;
+
+            font-family: "Chewy", cursive;
+            font-size: 42px;
+            font-weight: normal;
+        }
+
+        .adventure-cards {
+            max-width: 1050px;
+
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .adventure-card {
+            min-height: 230px;
+
+            padding: 28px 25px;
+
+            border: 3px solid white;
+            border-radius: 25px;
+
+            box-shadow: 0 8px 20px rgba(98, 70, 53, 0.12);
+
+            text-align: center;
+
+            transition: 0.2s;
+        }
+
+        .adventure-card:nth-child(1) {
+            background-color: #e8f1dc;
+        }
+
+        .adventure-card:nth-child(2) {
+            background-color: #ffe3df;
+        }
+
+        .adventure-card:nth-child(3) {
+            background-color: #fff0bf;
+        }
+
+        .adventure-card:hover {
+            transform: translateY(-7px) rotate(-1deg);
+        }
+
+        .card-icon {
+            font-size: 55px;
+        }
+
+        .adventure-card h3 {
+            margin: 9px 0;
+
+            color: #542c25;
+
+            font-family: "Chewy", cursive;
+            font-size: 27px;
+            font-weight: normal;
+        }
+
+        .adventure-card p {
+            margin: 0;
+
+            color: #55525b;
+
+            font-size: 16px;
+            line-height: 1.4;
+        }
+
+
+        /* =====================================================
+           PET BAGEL INTERACTION
+           ===================================================== */
+
+        .pet-section {
+            padding: 65px 20px;
+
+            background-color: #dff1fa;
+
+            text-align: center;
+        }
+
+        .pet-section h2 {
+            margin: 0 0 8px;
+
+            color: #6f291f;
+
+            font-family: "Chewy", cursive;
+            font-size: 43px;
+            font-weight: normal;
+        }
+
+        .pet-section p {
+            font-size: 18px;
+        }
+
+        .pet-button {
+            margin-top: 12px;
+            padding: 14px 30px;
+
+            background-color: #f17c7c;
+            color: white;
+
+            border: none;
+            border-radius: 30px;
+
+            font-family: "Patrick Hand", cursive;
+            font-size: 20px;
+
+            box-shadow: 0 5px 0 #c95255;
+
+            cursor: pointer;
+
+            transition: 0.15s;
+        }
+
+        .pet-button:hover {
+            transform: translateY(-3px);
+        }
+
+        .pet-button:active {
+            transform: translateY(3px);
+
+            box-shadow: 0 2px 0 #c95255;
+        }
+
+        #bagel-response {
+            min-height: 30px;
+
+            margin-top: 22px;
+
+            color: #9b342e;
+
+            font-family: "Chewy", cursive;
+            font-size: 25px;
+        }
+
+
+        /* =====================================================
+           AI PROMPT
+           required visible textbox for the assignment
+           ===================================================== */
 
         .prompt-section {
-            max-width: 750px;
-            margin: 55px auto 0;
+            padding: 55px 8%;
+
+            background-color: #fff7e8;
+
+            text-align: center;
         }
 
         .prompt-section h2 {
-            color: #654f41;
-            font-family: Georgia, "Times New Roman", serif;
-            font-size: 22px;
+            margin: 0 0 10px;
+
+            color: #713229;
+
+            font-family: "Chewy", cursive;
+            font-size: 34px;
             font-weight: normal;
         }
 
         .prompt-section p {
-            color: #746960;
-            font-size: 12px;
+            color: #715c56;
+
+            font-size: 16px;
         }
 
-        textarea {
-            width: 100%;
-            min-height: 130px;
-            padding: 18px;
-            background-color: #fffaf4;
-            border: 1px solid #d5c3b4;
-            border-radius: 10px;
-            color: #625850;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 12px;
-            line-height: 1.6;
+        .prompt-section textarea {
+            width: min(800px, 100%);
+            height: 180px;
+
+            margin-top: 15px;
+            padding: 20px;
+
             resize: vertical;
+
+            background-color: white;
+            color: #55443f;
+
+            border: 3px dashed #e2a99d;
+            border-radius: 15px;
+
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 13px;
+            line-height: 1.6;
         }
 
-        footer {
-            padding: 24px;
-            text-align: center;
-            background-color: #e8ddd2;
-            color: #827064;
-            font-family: Georgia, "Times New Roman", serif;
-            font-size: 12px;
+
+        /* =====================================================
+           FOOTER
+           ===================================================== */
+
+        .bagel-footer {
+            padding: 25px 6%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            background-color: #714039;
+            color: #fff3e5;
+
+            font-size: 15px;
         }
+
+        .bagel-footer a {
+            color: #fff3e5;
+
+            text-decoration: none;
+        }
+
+
+        /* =====================================================
+           SMALLER SCREENS
+           ===================================================== */
+
+        @media(max-width: 900px) {
+
+            .bagel-navbar {
+                flex-wrap: wrap;
+                justify-content: center;
+
+                gap: 10px;
+            }
+
+            .bagel-nav-links {
+                width: 100%;
+
+                margin-left: 0;
+
+                justify-content: center;
+                flex-wrap: wrap;
+
+                gap: 8px;
+            }
+
+            .back-home {
+                margin-left: 0;
+            }
+
+            .bagel-hero {
+                grid-template-columns: 1fr;
+
+                text-align: center;
+            }
+
+            .bagel-intro {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .bagel-photo-area {
+                margin-top: 20px;
+            }
+
+            .adventure-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .bagel-footer {
+                flex-direction: column;
+
+                gap: 8px;
+            }
+        }
+
     </style>
 </head>
 
+
 <body>
 
-    <header class="navbar">
-        <nav class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="portfolio.html">Portfolio</a>
-            <a href="qualifications.html">Qualifications</a>
-            <a href="activities.html">Activities</a>
-            <a href="sandbox.html" class="active">Sandbox</a>
+
+    <!-- =====================================================
+         BAGEL'S OWN NAVIGATION
+         ===================================================== -->
+
+    <header class="bagel-navbar">
+
+        <a href="#home" class="bagel-logo">
+            <span>🐾</span>
+            Bagel
+        </a>
+
+        <nav class="bagel-nav-links">
+            <a href="#home" class="active">⌂ Home</a>
+            <a href="#adventures">🗺 Adventures</a>
+            <a href="#pet-me">♡ Pet Me</a>
         </nav>
+
+        <!-- obvious way back to the actual portfolio -->
+        <a href="index.html" class="back-home">
+            ← Back to Tracy's Website
+        </a>
+
     </header>
 
 
-    <main class="sandbox-page">
+    <!-- =====================================================
+         HERO
+         ===================================================== -->
 
-        <section class="sandbox-header">
-            <p class="eyebrow">WELCOME TO</p>
+    <main>
 
-            <h1>Bagel's Corner.</h1>
+        <section class="bagel-hero" id="home">
+
+            <div class="mountain mountain-one"></div>
+            <div class="mountain mountain-two"></div>
+
+            <div class="hero-copy">
+
+                <p class="tiny-message">
+                    Same dog. New places. More treats. ♡
+                </p>
+
+                <h1>
+                    Bagel's<br>
+                    Life 🐾
+                </h1>
+
+                <p class="adventure-line">
+                    Food ☕︎ Travel ✈ Happier Days •ﻌ•
+                </p>
+
+                <p class="bagel-intro">
+                    Hi! I'm Bagel, a Pembroke Welsh Corgi who loves
+                    exploring new places, trying new foods, and making
+                    happy memories along the way. Follow my adventures
+                    and see the world through my very short legs!
+                </p>
+
+                <a href="#adventures" class="explore-button">
+                    Start Exploring →
+                </a>
+
+            </div>
+
+
+            <div class="bagel-photo-area">
+
+                <div class="bagel-card">
+
+                    <div class="tape"></div>
+
+                    <img src="BagelLandingPic.JPG" alt="Bagel the Corgi" class="bagel-emoji"
+                    height = auto width = "275"
+                    >
+
+                    <p>
+                        Hey! I'm Bagel ♡
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             ADVENTURES
+             ================================================= -->
+
+        <section class="adventure-section" id="adventures">
+
+            <div class="section-heading">
+                <p>🐾 PICK YOUR ADVENTURE 🐾</p>
+                <h2>Where should we go?</h2>
+            </div>
+
+            <div class="adventure-cards">
+
+                <article class="adventure-card">
+
+                    <div class="card-icon">🗺️</div>
+
+                    <h3>Adventures</h3>
+
+                    <p>
+                        Follow Bagel's journey to new places,
+                        road trips, parks, lakes, and more.
+                    </p>
+
+                </article>
+
+
+                <article class="adventure-card">
+
+                    <div class="card-icon">📷</div>
+
+                    <h3>Happy Moments</h3>
+
+                    <p>
+                        A little collection of Bagel's favorite
+                        memories and adventures.
+                    </p>
+
+                </article>
+
+
+                <article class="adventure-card">
+
+                    <div class="card-icon">🐕</div>
+
+                    <h3>Pet Me</h3>
+
+                    <p>
+                        Give Bagel a virtual pet and see how
+                        this very happy corgi reacts.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             JAVASCRIPT INTERACTION
+             ================================================= -->
+
+        <section class="pet-section" id="pet-me">
+
+            <h2>Pet Bagel ♡</h2>
 
             <p>
-                A tiny corner of my website dedicated to my favorite
-                four-legged companion.
-            </p>
-        </section>
-
-
-        <section class="bagel-card">
-
-            <div class="dog-icon">
-                🐶
-            </div>
-
-            <h2>Meet Bagel!</h2>
-
-            <p class="bagel-intro">
-                Bagel is my Pembroke Welsh Corgi and adventure buddy.
-                He loves exploring, getting attention, and being involved
-                in almost everything I do.
+                Bagel has been waiting very patiently for attention.
             </p>
 
-            <div class="bagel-facts">
-                <span>🐾 Corgi</span>
-                <span>♡ Professional Cuddler</span>
-                <span>✦ Adventure Buddy</span>
-            </div>
-
-            <button class="pet-button" onclick="petBagel()">
-                Pet Bagel ♡
+            <button class="pet-button" id="pet-button">
+                🐾 Give Bagel a Pet
             </button>
 
-            <p id="pet-message"></p>
+            <div id="bagel-response"></div>
 
         </section>
 
+
+        <!-- =================================================
+             REQUIRED AI PROMPT
+             ================================================= -->
 
         <section class="prompt-section">
 
-            <h2>Prompt Used to Create This Page</h2>
+            <h2>How this page was created ✦</h2>
 
             <p>
-                This sandbox page was created with the assistance of generative AI.
+                This sandbox page was generated with AI using the
+                following final prompt:
             </p>
 
-            <textarea readonly>Create an interactive sandbox webpage about my Corgi named Bagel. Include a warm beige boho aesthetic, a short introduction about Bagel, fun fact tags, and an interactive "Pet Bagel" button that displays a cute response when clicked. Include a navigation bar linking to Home, Portfolio, Resume & Skills, Activities, and Sandbox. Use only HTML, inline CSS, and JavaScript contained within the HTML file.</textarea>
+            <textarea readonly>Create a playful and nontrivially complex standalone sandbox webpage for my personal portfolio about my Pembroke Welsh Corgi named Bagel. Treat the page like Bagel has his own miniature website rather than making it visually match the rest of my professional portfolio. Use a cheerful road-trip and adventure aesthetic inspired by travel journals, postcards, illustrated landscapes, and playful pet websites. Use soft sky blue, cream, pink, green, and warm brown colors. Give Bagel's mini website its own navigation with Home, Adventures, and Pet Me sections, while also including a clearly visible and creative way for visitors to navigate back to Tracy's main portfolio website. Create a large hero introducing “Bagel's Life” with the phrase “Same dog. New places. More treats.” and describe Bagel as a Pembroke Welsh Corgi who enjoys exploring new places, food, and adventures. Add playful decorative scenery, a Polaroid-style Bagel card, adventure cards, hover effects, and a “Pet Bagel” interaction. When visitors click the Pet Bagel button, use JavaScript to randomly display cute responses from Bagel. Make the design responsive. Use only HTML, inline CSS, and JavaScript contained directly inside the HTML file, with no external stylesheet. Also include this final AI prompt in a visible readonly textarea near the bottom of the page.</textarea>
 
         </section>
 
     </main>
 
 
-    <footer>
-        <p>Designed & built by Tracy Tran</p>
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
+
+    <footer class="bagel-footer">
+
+        <span>🐾 Bagel's little corner of the internet</span>
+
+        <a href="index.html">
+            ← Return to Tracy Tran's Portfolio
+        </a>
+
     </footer>
 
 
+    <!-- =====================================================
+         BAGEL INTERACTION
+         ===================================================== -->
+
     <script>
-        function petBagel() {
-            const messages = [
-                "Bagel is happy! ♡",
-                "You earned a corgi smile!",
-                "Bagel wants another pet!",
-                "Tail wag activated! ✦"
-            ];
+
+        const petButton = document.getElementById("pet-button");
+        const bagelResponse = document.getElementById("bagel-response");
+
+        const bagelMessages = [
+            "Tail wag activated! ♡",
+            "Bagel is very happy! 🐾",
+            "You earned a corgi smile!",
+            "Bagel would like another pet.",
+            "Best day ever! ♡",
+            "Bagel says: more pets, please!",
+            "Achievement unlocked: Corgi Approved ✦"
+        ];
+
+        petButton.addEventListener("click", function () {
 
             const randomMessage =
-                messages[Math.floor(Math.random() * messages.length)];
+                bagelMessages[
+                    Math.floor(Math.random() * bagelMessages.length)
+                ];
 
-            document.getElementById("pet-message").textContent =
-                randomMessage;
-        }
+            bagelResponse.textContent = randomMessage;
+
+        });
+
     </script>
 
-</body>
 
+</body>
 </html>
