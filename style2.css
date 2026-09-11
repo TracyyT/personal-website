@@ -1,1327 +1,1278 @@
-/* =========================================================
-   STYLE 2 — RETRO BOTANICAL
-   completely different layout from style1
-   ========================================================= */
+/* style 2 retro */
 
 * {
-    box-sizing: border-box;
+    box-sizing: border-box; /* include padding and border inside total size */
 }
 
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; /* smooth scrolling when clicking section links */
 }
 
 body {
-    margin: 0;
-    background-color: #dfe5cf;
-    color: #41472f;
-    font-family: "Trebuchet MS", "Arial Rounded MT Bold", Arial, sans-serif;
+    margin: 0; /* remove browser default margin */
+    background-color: #dfe5cf; /* main soft green background */
+    color: #41472f; /* default dark olive text */
+    font-family: "Trebuchet MS", "Arial Rounded MT Bold", Arial, sans-serif; /* more playful retro font */
 }
 
 
-/* =========================================================
-   LEFT SIDEBAR NAVIGATION
-   ========================================================= */
+/* left sidebar navigation */
 
 .navbar {
-    width: 200px;
-    height: 100vh;
-    padding: 42px 26px 30px;
+    width: 200px; /* sidebar width */
+    height: 100vh; /* make sidebar fill full screen height */
+    padding: 42px 26px 30px; /* inside spacing */
 
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 20;
+    position: fixed; /* keep sidebar in place while scrolling */
+    top: 0; /* attach to top */
+    left: 0; /* attach to left */
+    z-index: 20; /* keep sidebar above page content */
 
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
+    display: flex; /* use flex layout */
+    flex-direction: column; /* stack items vertically */
+    align-items: stretch; /* let items fill sidebar width */
 
-    background-color: #5f6845;
-    border-right: 5px solid #d88545;
+    background-color: #5f6845; /* dark olive sidebar */
+    border-right: 5px solid #d88545; /* orange divider */
 }
 
 .logo {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 45px;
+    display: flex; /* line up flower and text */
+    align-items: center; /* vertically center them */
+    gap: 8px; /* space between flower and text */
+    margin-bottom: 45px; /* space under logo */
 
+    color: #fff1d6; /* light cream logo */
+    text-decoration: none; /* remove underline */
+    font-family: "Arial Rounded MT Bold", "Trebuchet MS", sans-serif; /* playful logo font */
+    font-size: 23px; /* logo size */
+    font-weight: bold; /* make logo stand out */
 
-    color: #fff1d6;
-    text-decoration: none;
-    font-family: "Arial Rounded MT Bold", "Trebuchet MS", sans-serif;
-    font-size: 23px;
-    font-weight: bold;
-
-    text-align: center;
+    text-align: center; /* center logo text */
 }
 
 .logo-star {
-    display: none;
+    display: none; /* hide style1 star icon */
 }
 
 .logo-flower {
-    display: inline;
-    font-size: 24px;
+    display: inline; /* show retro flower icon */
+    font-size: 24px; /* flower size */
 }
-
-/* little site title without changing HTML */
- /* .navbar::before {
-    content: "✿ TRACY ✿";
-    margin-bottom: 45px;
-
-    color: #fff1d6;
-
-    font-family: "Arial Rounded MT Bold", "Trebuchet MS", sans-serif;
-    font-size: 23px;
-    font-weight: bold;
-    letter-spacing: 1px;
-
-    text-align: center;
-}  */
 
 
 /* leaf decoration at bottom of sidebar */
+
 .navbar::after {
-    content: "❧";
-    margin-top: auto;
+    content: "❧"; /* decorative leaf symbol */
+    margin-top: auto; /* push decoration to bottom */
 
-    color: #b9c58b;
+    color: #b9c58b; /* lighter green */
 
-    font-family: Georgia, serif;
-    font-size: 70px;
+    font-family: Georgia, serif; /* decorative font */
+    font-size: 70px; /* large leaf symbol */
 
-    text-align: center;
-    transform: rotate(-25deg);
+    text-align: center; /* center inside sidebar */
+    transform: rotate(-25deg); /* tilt it slightly */
 }
 
 
 .nav-links {
-    display: flex;
-    flex-direction: column;
-    gap: 11px;
+    display: flex; /* use flex layout */
+    flex-direction: column; /* stack nav links */
+    gap: 11px; /* space between links */
 }
 
 
 .nav-links a {
-    padding: 11px 15px;
+    padding: 11px 15px; /* space inside each nav link */
 
-    color: #f7efd9;
+    color: #f7efd9; /* light cream text */
 
-    text-decoration: none;
-    font-size: 12px;
-    font-weight: bold;
-    /* letter-spacing: 0.4px; */
+    text-decoration: none; /* remove underline */
+    font-size: 12px; /* nav text size */
+    font-weight: bold; /* make links stand out */
 
-    border-radius: 14px;
+    border-radius: 14px; /* rounded nav buttons */
 
-    transition: 0.25s;
+    transition: 0.25s; /* smooth hover effect */
 }
 
 
 .nav-links a:hover {
-    background-color: #737d55;
-    transform: translateX(5px);
+    background-color: #737d55; /* lighter green when hovering */
+    transform: translateX(5px); /* slide link slightly right */
 }
 
 
 .nav-links .active {
-    background-color: #d88545;
-    color: #fff7e8;
+    background-color: #d88545; /* orange background for current page */
+    color: #fff7e8; /* light text */
 
-    border: none;
+    border: none; /* remove any border from style1 */
 }
 
 
-/* style-switching button */
+/* floating style-switching button */
+
 .style-toggle {
-    position: fixed;
-    right: 20px;
-    top: 80%;
-    transform: translateY(calc(-50% + var(--scroll-move, 0px)));
-    z-index: 1000;
+    position: fixed; /* keep button floating while scrolling */
+    right: 20px; /* distance from right side */
+    top: 80%; /* place button lower on screen */
+    transform: translateY(calc(-50% + var(--scroll-move, 0px))); /* center button around its position */
+    z-index: 1000; /* keep button above everything */
 
-    width: 44px;
-    height: 44px;
-    padding: 0;
+    width: 44px; /* button width */
+    height: 44px; /* button height */
+    padding: 0; /* remove extra inside spacing */
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: flex; /* center icon inside button */
+    align-items: center; /* vertical center */
+    justify-content: center; /* horizontal center */
 
-    background-color: #f3a35c;
-    color: #4f6038;
+    background-color: #f3a35c; /* orange button */
+    color: #4f6038; /* dark green icon */
 
-    border: 2px solid #4f6038;
-    border-radius: 50%;
+    border: 2px solid #4f6038; /* green outline */
+    border-radius: 50%; /* make button circular */
 
-    cursor: pointer;
-    transition: 0.25s;
+    cursor: pointer; /* show pointer when hovering */
+    transition: 0.25s; /* smooth hover effect */
 }
 
 .toggle-icon {
-    margin: 0;
-    font-size: 23px;
-    color: #4f6038;
+    margin: 0; /* remove extra spacing */
+    font-size: 23px; /* icon size */
+    color: #4f6038; /* dark green icon */
 }
 
 .toggle-label {
-    position: absolute;
-    right: 52px;
+    position: absolute; /* position label beside button */
+    right: 52px; /* move label to left of button */
 
-    background-color: #4f6038;
-    color: #fff7e8;
+    background-color: #4f6038; /* dark green background */
+    color: #fff7e8; /* light label text */
 
-    padding: 7px 11px;
-    border-radius: 4px;
+    padding: 7px 11px; /* space inside label */
+    border-radius: 4px; /* slightly rounded corners */
 
-    font-size: 11px;
-    white-space: nowrap;
+    font-size: 11px; /* label text size */
+    white-space: nowrap; /* keep label on one line */
 
-    opacity: 0;
-    visibility: hidden;
+    opacity: 0; /* hide label normally */
+    visibility: hidden; /* fully hide it when not hovering */
 
-    transition: 0.2s;
+    transition: 0.2s; /* smooth appearance */
 }
 
 .style-toggle:hover .toggle-label {
-    opacity: 1;
-    visibility: visible;
+    opacity: 1; /* show label */
+    visibility: visible; /* make label visible */
 }
 
 .style-toggle:hover {
-    transform: translateY(-50%) scale(1.08);
+    transform: translateY(-50%) scale(1.08); /* make button slightly bigger */
 }
 
 .style-toggle:hover .toggle-icon {
-    color: #fff7e8;
+    color: #fff7e8; /* turn icon light on hover */
 }
 
 
-/* =========================================================
-   MAIN LANDING PAGE
-   ========================================================= */
+/* main landing page */
 
 .landing-page {
-    min-height: 100vh;
-    margin-left: 220px;
+    min-height: 100vh; /* fill at least one full screen */
+    margin-left: 220px; /* leave room for sidebar */
 
-    position: relative;
-    overflow: hidden;
+    position: relative; /* lets decorations be positioned inside */
+    overflow: hidden; /* hide decorations outside page */
 
-    background-color: #dfe5cf;
+    background-color: #dfe5cf; /* soft green background */
 
-    /* subtle retro paper effect */
+    /* small dotted texture for retro paper look */
     background-image:
         radial-gradient(circle at 10% 15%, rgba(255,255,255,.38) 0 2px, transparent 3px),
         radial-gradient(circle at 80% 70%, rgba(90,100,65,.09) 0 2px, transparent 3px);
-    background-size: 34px 34px, 42px 42px;
+    background-size: 34px 34px, 42px 42px; /* spacing between texture dots */
 }
 
 
-/* =========================================================
-   RETRO HERO
-   ========================================================= */
+/* retro hero section */
 
 .hero {
-    width: 86%;
-    max-width: 1100px;
-    min-height: 610px;
+    width: 86%; /* hero width */
+    max-width: 1100px; /* stop it from getting too wide */
+    min-height: 610px; /* give hero enough vertical space */
 
-    margin: 0 auto;
+    margin: 0 auto; /* center hero */
 
-    display: grid;
+    display: grid; /* split into two columns */
 
-    /* photo on left, text on right */
-    grid-template-columns: 0.85fr 1.15fr;
+    grid-template-columns: 0.85fr 1.15fr; /* smaller photo side, bigger text side */
 
-    align-items: center;
-    gap: 75px;
+    align-items: center; /* vertically center columns */
+    gap: 75px; /* space between photo and text */
 
-    position: relative;
-    z-index: 3;
+    position: relative; /* lets z-index work */
+    z-index: 3; /* keep hero above background decorations */
 }
 
 
 /* move photo to left */
+
 .hero-photo {
-    grid-column: 1;
-    grid-row: 1;
+    grid-column: 1; /* first column */
+    grid-row: 1; /* same row as text */
 
-    min-height: 500px;
+    min-height: 500px; /* keep enough room for photo */
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: flex; /* center photo */
+    justify-content: center; /* horizontal center */
+    align-items: center; /* vertical center */
 }
 
 
 /* move text to right */
+
 .hero-text {
-    grid-column: 2;
-    grid-row: 1;
+    grid-column: 2; /* second column */
+    grid-row: 1; /* same row as photo */
 
-    padding: 40px 0;
+    padding: 40px 0; /* vertical spacing */
 
-    position: relative;
+    position: relative; /* lets decorative elements position around it */
 }
 
 
 /* little retro label */
 
 .eyebrow {
-    display: inline-block;
+    display: inline-block; /* fit background around text */
 
-    margin: 0 0 15px;
-    padding: 8px 13px;
+    margin: 0 0 15px; /* space below */
+    padding: 8px 13px; /* space inside label */
 
-    background-color: #f4d49d;
-    color: #78603e;
+    background-color: #f4d49d; /* soft yellow */
+    color: #78603e; /* brown text */
 
-    border-radius: 8px;
+    border-radius: 8px; /* rounded label */
 
-    font-size: 10px;
-    font-weight: bold;
-    letter-spacing: 1.6px;
-    text-transform: uppercase;
+    font-size: 10px; /* small text */
+    font-weight: bold; /* make it stand out */
+    letter-spacing: 1.6px; /* spread letters */
+    text-transform: uppercase; /* all caps */
 
-    transform: rotate(-1deg);
+    transform: rotate(-1deg); /* small handmade tilt */
 }
 
 
 /* main heading */
 
 h1 {
-    margin: 0;
+    margin: 0; /* remove default heading margin */
 
-    color: #4d5936;
+    color: #4d5936; /* dark green */
 
-    font-family: "Arial Rounded MT Bold", "Trebuchet MS", sans-serif;
-    font-size: 55px;
-    font-weight: bold;
-    line-height: 0.98;
+    font-family: "Arial Rounded MT Bold", "Trebuchet MS", sans-serif; /* playful retro font */
+    font-size: 55px; /* main heading size */
+    font-weight: bold; /* chunky heading */
+    line-height: 0.98; /* keep lines close together */
 
-    letter-spacing: -1px;
+    letter-spacing: -1px; /* pull letters slightly closer */
 }
 
 
 h1 span {
-    display: inline-block;
+    display: inline-block; /* allow transform to work */
 
-    margin-top: 5px;
+    margin-top: 5px; /* small space above name */
 
-    color: #cf783c;
+    color: #cf783c; /* orange accent */
 
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 65px;
-    font-style: italic;
-    font-weight: bold;
+    font-family: Georgia, "Times New Roman", serif; /* decorative font for name */
+    font-size: 65px; /* make name bigger */
+    font-style: italic; /* more playful look */
+    font-weight: bold; /* keep name strong */
 
-    transform: rotate(-2deg);
+    transform: rotate(-2deg); /* slight tilt */
 }
 
 
 /* tagline */
 
 .tagline {
-    margin: 23px 0 15px;
+    margin: 23px 0 15px; /* spacing around tagline */
 
-    color: #68704d;
+    color: #68704d; /* muted green */
 
-    font-family: "Trebuchet MS", Arial, sans-serif;
-    font-size: 18px;
-    font-weight: bold;
+    font-family: "Trebuchet MS", Arial, sans-serif; /* playful font */
+    font-size: 18px; /* tagline size */
+    font-weight: bold; /* make it stand out */
 }
 
 
 /* intro paragraph */
 
 .description {
-    max-width: 400px;
+    max-width: 400px; /* keep paragraph narrow and readable */
 
-    margin: 0 0 27px;
+    margin: 0 0 27px; /* space below description */
 
-    color: #50573d;
+    color: #50573d; /* dark green-gray */
 
-    font-size: 12px;
-    line-height: 1.9;
+    font-size: 12px; /* paragraph size */
+    line-height: 1.9; /* more space between lines */
 }
 
 
 .description a {
-    color: #b96231;
+    color: #b96231; /* orange link */
 
-    font-weight: bold;
-    text-decoration: none;
+    font-weight: bold; /* make link stand out */
+    text-decoration: none; /* remove normal underline */
 
-    border-bottom: 2px dotted #b96231;
+    border-bottom: 2px dotted #b96231; /* retro dotted underline */
 }
 
 
 .description a:hover {
-    color: #794023;
+    color: #794023; /* darker orange on hover */
 }
 
 
-/* =========================================================
-   HERO BUTTONS
-   ========================================================= */
+/* hero buttons */
 
 .hero-buttons {
-    display: flex;
-    align-items: center;
-    gap: 18px;
+    display: flex; /* place buttons side by side */
+    align-items: center; /* vertically align them */
+    gap: 18px; /* space between buttons */
 }
 
 
 .primary-button {
-    display: inline-block;
+    display: inline-block; /* let padding work like a button */
 
-    padding: 14px 24px;
+    padding: 14px 24px; /* inside spacing */
 
-    background-color: #59633f;
-    color: #fff3d8;
+    background-color: #59633f; /* dark green button */
+    color: #fff3d8; /* light cream text */
 
-    border: 3px solid #59633f;
-    border-radius: 12px;
+    border: 3px solid #59633f; /* same green border */
+    border-radius: 12px; /* rounded corners */
 
-    text-decoration: none;
+    text-decoration: none; /* remove underline */
 
-    font-size: 12px;
-    font-weight: bold;
+    font-size: 12px; /* button text size */
+    font-weight: bold; /* bold button text */
 
-    box-shadow: 5px 5px 0 #d88545;
+    box-shadow: 5px 5px 0 #d88545; /* orange retro shadow */
 
-    transition: 0.2s;
+    transition: 0.2s; /* smooth hover */
 }
 
 
 .primary-button:hover {
-    transform: translate(-2px, -2px);
+    transform: translate(-2px, -2px); /* move slightly up and left */
 
-    box-shadow: 8px 8px 0 #d88545;
+    box-shadow: 8px 8px 0 #d88545; /* make shadow larger */
 }
 
 
 .secondary-button {
-    padding: 12px 17px;
+    padding: 12px 17px; /* inside spacing */
 
-    color: #925228;
+    color: #925228; /* orange-brown text */
 
-    border: 2px dashed #d88545;
-    border-radius: 10px;
+    border: 2px dashed #d88545; /* retro dashed border */
+    border-radius: 10px; /* rounded corners */
 
-    font-family: "Trebuchet MS", Arial, sans-serif;
-    font-size: 12px;
-    font-weight: bold;
+    font-family: "Trebuchet MS", Arial, sans-serif; /* playful font */
+    font-size: 12px; /* button size */
+    font-weight: bold; /* bold text */
 
-    text-decoration: none;
+    text-decoration: none; /* remove underline */
 
-    background-color: rgba(255, 244, 220, 0.5);
+    background-color: rgba(255, 244, 220, 0.5); /* light transparent background */
 }
 
 
 .secondary-button:hover {
-    background-color: #f5d9a7;
+    background-color: #f5d9a7; /* warm yellow on hover */
 }
 
 
-/* =========================================================
-   POLAROID PHOTO
-   ========================================================= */
+/* polaroid photo */
 
 .photo-wrapper {
-    width: 310px;
-    height: 400px;
+    width: 310px; /* photo wrapper width */
+    height: 400px; /* photo wrapper height */
 
-    position: relative;
+    position: relative; /* lets tape and caption position around it */
 
-
-    transform: rotate(-4deg);
+    transform: rotate(-4deg); /* tilt the whole polaroid */
 }
 
 
 .photo-frame {
-    width: 310px;
-    height: 420px;
+    width: 310px; /* frame width */
+    height: 420px; /* frame height */
 
-    padding: 14px 14px 55px;
+    padding: 14px 14px 55px; /* leave bigger bottom space like a polaroid */
 
-    position: relative;
-    z-index: 3;
+    position: relative; /* lets z-index work */
+    z-index: 3; /* keep frame above decorations */
 
-    background-color: #fff4dd;
+    background-color: #fff4dd; /* cream polaroid frame */
 
-    border: 2px solid #c5b68d;
-    border-radius: 3px;
+    border: 2px solid #c5b68d; /* light retro border */
+    border-radius: 3px; /* almost square corners */
 
-    box-shadow: 12px 14px 0 rgba(91, 99, 64, 0.25);
+    box-shadow: 12px 14px 0 rgba(91, 99, 64, 0.25); /* chunky green shadow */
 }
 
 
 .photo {
-    width: 100%;
-    height: 100%;
+    width: 100%; /* fill frame width */
+    height: 100%; /* fill frame height */
 
-    display: block;
+    display: block; /* remove small image spacing */
 
-    object-fit: cover;
+    object-fit: cover; /* crop without stretching */
 
-    border-radius: 0;
+    border-radius: 0; /* square photo inside polaroid */
 }
 
 
 /* fake tape decoration */
 
 .arch-outline {
-    width: 85px;
-    height: 26px;
+    width: 85px; /* tape width */
+    height: 26px; /* tape height */
 
-    position: absolute;
-    top: -13px;
-    left: -24px;
-    z-index: 5;
+    position: absolute; /* place over photo */
+    top: -13px; /* move tape above frame */
+    left: -24px; /* move tape left */
+    z-index: 5; /* keep tape above photo */
 
-    background-color: rgba(218, 161, 92, 0.65);
+    background-color: rgba(218, 161, 92, 0.65); /* semi-transparent orange tape */
 
-    border: none;
-    border-radius: 1px;
+    border: none; /* remove style1 outline */
+    border-radius: 1px; /* nearly square tape */
 
-    transform: rotate(-38deg);
+    transform: rotate(-38deg); /* tilt tape */
 }
 
 
 /* photo caption */
 
 .photo-note {
-    width: 100%;
+    width: 100%; /* use full photo width */
 
-    position: absolute;
+    position: absolute; /* place caption inside polaroid */
     right: auto;
-    left: 0;
-    bottom: 10px;
-    z-index: 6;
+    left: 0; /* line up with left edge */
+    bottom: 10px; /* place near bottom */
+    z-index: 6; /* keep above frame */
 
-    padding: 0;
+    padding: 0; /* remove style1 padding */
 
-    background: none;
-    border: none;
-    box-shadow: none;
+    background: none; /* remove style1 card background */
+    border: none; /* remove border */
+    box-shadow: none; /* remove shadow */
 
-    color: #7a6041;
+    color: #7a6041; /* brown caption text */
 
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 15px;
-    font-style: italic;
+    font-family: Georgia, "Times New Roman", serif; /* handwritten-ish serif */
+    font-size: 15px; /* caption size */
+    font-style: italic; /* make it feel handwritten */
 
-    text-align: center;
+    text-align: center; /* center caption */
 
-    transform: none;
+    transform: none; /* remove style1 rotation */
 }
 
 
 /* little stars become retro flowers */
 
 .little-star {
-    position: absolute;
-    z-index: 7;
+    position: absolute; /* freely place decorations */
+    z-index: 7; /* keep above photo */
 
-    color: #d27a3f;
+    color: #d27a3f; /* orange decoration */
 
-    font-size: 28px;
+    font-size: 28px; /* decoration size */
 }
 
 
 .star-one {
-    top: 25px;
-    right: -35px;
+    top: 25px; /* position near top */
+    right: -35px; /* move outside right edge */
 }
 
 
 .star-two {
-    left: -28px;
-    bottom: 60px;
+    left: -28px; /* move outside left edge */
+    bottom: 60px; /* position near bottom */
 
-    color: #68734d;
+    color: #68734d; /* green decoration */
 }
 
 
-/* =========================================================
-   DECORATIVE SHAPES
-   turn existing circles into leaf graphics
-   ========================================================= */
+/* decorative shapes, now more like retro leaves */
 
 .shape {
-    position: absolute;
-    z-index: 1;
+    position: absolute; /* freely place around page */
+    z-index: 1; /* keep behind main content */
 
-    border-radius: 100% 0 100% 0;
+    border-radius: 100% 0 100% 0; /* leaf-like shape */
 }
 
 
 .shape-one {
-    width: 180px;
-    height: 300px;
+    width: 180px; /* first leaf width */
+    height: 300px; /* first leaf height */
 
-    top: -80px;
-    right: -20px;
+    top: -80px; /* move partly off top */
+    right: -20px; /* move toward right edge */
 
-    background-color: #899467;
+    background-color: #899467; /* muted green */
 
-    transform: rotate(35deg);
+    transform: rotate(35deg); /* angle leaf */
 
-    opacity: 0.7;
+    opacity: 0.7; /* make it softer */
 }
 
 
 .shape-two {
-    width: 210px;
-    height: 340px;
+    width: 210px; /* second leaf width */
+    height: 340px; /* second leaf height */
 
-    left: -75px;
-    bottom: 70px;
+    left: -75px; /* move partly off left side */
+    bottom: 70px; /* move up from bottom */
 
-    background-color: #c5753e;
+    background-color: #c5753e; /* orange */
 
-    transform: rotate(-25deg);
+    transform: rotate(-25deg); /* angle leaf */
 
-    opacity: 0.55;
+    opacity: 0.55; /* make it softer */
 }
 
 
 .shape-three {
-    width: 100px;
-    height: 170px;
+    width: 100px; /* third leaf width */
+    height: 170px; /* third leaf height */
 
-    top: 260px;
-    left: 48%;
+    top: 260px; /* place lower on page */
+    left: 48%; /* move close to center */
 
-    background-color: #a8b180;
+    background-color: #a8b180; /* light green */
 
-    border: none;
+    border: none; /* remove style1 outline */
 
-    transform: rotate(50deg);
+    transform: rotate(50deg); /* rotate leaf */
 
-    opacity: 0.65;
+    opacity: 0.65; /* make it subtle */
 }
 
 
 /* extra leafy graphics */
 
 .landing-page::before {
-    content: "❧";
+    content: "❧"; /* decorative leaf symbol */
 
-    position: absolute;
-    top: 70px;
-    right: 55px;
-    z-index: 2;
+    position: absolute; /* place freely on page */
+    top: 70px; /* distance from top */
+    right: 55px; /* distance from right */
+    z-index: 2; /* keep behind main content */
 
-    color: #647049;
+    color: #647049; /* green */
 
-    font-family: Georgia, serif;
-    font-size: 110px;
+    font-family: Georgia, serif; /* decorative symbol font */
+    font-size: 110px; /* large leaf */
 
-    transform: rotate(35deg);
+    transform: rotate(35deg); /* tilt leaf */
 
-    opacity: 0.65;
+    opacity: 0.65; /* make it subtle */
 }
 
 
 .landing-page::after {
-    content: "❧";
+    content: "❧"; /* second leaf symbol */
 
-    position: absolute;
-    left: 250px;
-    bottom: 110px;
-    z-index: 1;
+    position: absolute; /* place freely */
+    left: 250px; /* distance from left */
+    bottom: 110px; /* distance from bottom */
+    z-index: 1; /* keep behind content */
 
-    color: #d07b41;
+    color: #d07b41; /* orange */
 
-    font-family: Georgia, serif;
-    font-size: 90px;
+    font-family: Georgia, serif; /* decorative symbol */
+    font-size: 90px; /* leaf size */
 
-    transform: rotate(-110deg);
+    transform: rotate(-110deg); /* rotate leaf */
 
-    opacity: 0.5;
+    opacity: 0.5; /* make it softer */
 }
 
 
-/* =========================================================
-   QUICK INTRO
-   now looks like three retro cards instead of one clean row
-   ========================================================= */
+/* quick intro becomes three retro cards */
 
 .quick-intro {
-    width: 84%;
-    max-width: 1050px;
+    width: 84%; /* section width */
+    max-width: 1050px; /* limit overall width */
 
-    margin: 0px auto 70px;
-    padding: 0;
+    margin: 0 auto 70px; /* center and add space below */
+    padding: 0; /* no extra outside padding */
 
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 23px;
+    display: grid; /* use grid layout */
+    grid-template-columns: repeat(3, 1fr); /* make 3 equal cards */
+    gap: 23px; /* space between cards */
 
-    position: relative;
-    z-index: 4;
+    position: relative; /* lets z-index work */
+    z-index: 4; /* keep cards above decorations */
 
-    border: none;
+    border: none; /* remove style1 divider lines */
 }
 
 
 .intro-item {
-    min-height: 180px;
+    min-height: 180px; /* keep cards similar height */
 
-    padding: 27px 23px;
+    padding: 27px 23px; /* inside spacing */
 
-    display: block;
+    display: block; /* stack content normally */
 
-    position: relative;
+    position: relative; /* lets decorations position if needed */
 
-    background-color: #fff0d2;
+    background-color: #fff0d2; /* cream card */
 
-    border: 2px solid #b9a877;
-    border-radius: 18px;
+    border: 2px solid #b9a877; /* muted border */
+    border-radius: 18px; /* rounded corners */
 
-    box-shadow: 7px 7px 0 #9aa574;
+    box-shadow: 7px 7px 0 #9aa574; /* chunky green shadow */
 
-    transition: 0.2s;
+    transition: 0.2s; /* smooth hover */
 }
 
 
 .intro-item:nth-child(2) {
-    background-color: #edb675;
+    background-color: #edb675; /* orange second card */
 
-    transform: rotate(1.5deg);
+    transform: rotate(1.5deg); /* small scrapbook tilt */
 }
 
 
 .intro-item:nth-child(3) {
-    background-color: #c4cf9e;
+    background-color: #c4cf9e; /* green third card */
 
-    transform: rotate(-1.5deg);
+    transform: rotate(-1.5deg); /* tilt opposite direction */
 }
 
 
 .intro-item:hover {
-    transform: translateY(-5px) rotate(-1deg);
+    transform: translateY(-5px) rotate(-1deg); /* lift card when hovering */
 }
 
 
 .number {
-    display: inline-block;
+    display: inline-block; /* let margin work properly */
 
-    margin-bottom: 15px;
+    margin-bottom: 15px; /* space under number */
 
-    color: #c26835;
+    color: #c26835; /* orange number */
 
-    font-family: "Arial Rounded MT Bold", Arial, sans-serif;
-    font-size: 13px;
-    font-style: normal;
-    font-weight: bold;
+    font-family: "Arial Rounded MT Bold", Arial, sans-serif; /* playful number */
+    font-size: 13px; /* number size */
+    font-style: normal; /* remove style1 italic */
+    font-weight: bold; /* make number stand out */
 }
 
 
 .intro-item h2 {
-    margin: 0 0 10px;
+    margin: 0 0 10px; /* space under heading */
 
-    color: #475033;
+    color: #475033; /* dark green */
 
-    font-family: "Arial Rounded MT Bold", "Trebuchet MS", sans-serif;
-    font-size: 22px;
-    font-weight: bold;
+    font-family: "Arial Rounded MT Bold", "Trebuchet MS", sans-serif; /* playful heading */
+    font-size: 22px; /* heading size */
+    font-weight: bold; /* stronger heading */
 }
 
 
 .intro-item p {
-    margin: 0;
+    margin: 0; /* remove default paragraph margin */
 
-    color: #53573f;
+    color: #53573f; /* dark green-gray */
 
-    font-size: 11px;
-    line-height: 1.7;
+    font-size: 11px; /* paragraph size */
+    line-height: 1.7; /* make text easier to read */
 }
 
 
-/* =========================================================
-   CONTACT SECTION
-   ========================================================= */
+/* contact section */
 
 .contact-section {
-    width: 84%;
-    max-width: 1050px;
+    width: 84%; /* section width */
+    max-width: 1050px; /* limit maximum width */
 
-    margin: 20px auto 70px;
-    padding: 45px 30px;
+    margin: 20px auto 70px; /* center with space around it */
+    padding: 45px 30px; /* inside spacing */
 
-    position: relative;
-    z-index: 4;
+    position: relative; /* lets z-index work */
+    z-index: 4; /* keep above decorations */
 
-    text-align: center;
+    text-align: center; /* center content */
 
-    background-color: #65704b;
+    background-color: #65704b; /* dark green card */
 
-    border-radius: 28px 8px 28px 8px;
+    border-radius: 28px 8px 28px 8px; /* uneven retro corners */
 
-    box-shadow: 10px 10px 0 #d48345;
+    box-shadow: 10px 10px 0 #d48345; /* orange chunky shadow */
 }
 
 
 .contact-label {
-    margin: 0 0 10px;
+    margin: 0 0 10px; /* space below label */
 
-    color: #edc88e;
+    color: #edc88e; /* light orange */
 
-    font-size: 10px;
-    font-weight: bold;
-    letter-spacing: 2px;
+    font-size: 10px; /* small label */
+    font-weight: bold; /* make it stand out */
+    letter-spacing: 2px; /* spread letters */
 }
 
 
 .contact-section h2 {
-    margin: 0 0 12px;
+    margin: 0 0 12px; /* space below heading */
 
-    color: #fff2d6;
+    color: #fff2d6; /* cream heading */
 
-    font-family: "Arial Rounded MT Bold", "Trebuchet MS", sans-serif;
-    font-size: 32px;
+    font-family: "Arial Rounded MT Bold", "Trebuchet MS", sans-serif; /* playful heading */
+    font-size: 32px; /* heading size */
 }
 
 
 .contact-description {
-    margin: 0 auto 28px;
+    margin: 0 auto 28px; /* center and add space below */
 
-    color: #e7e3c9;
+    color: #e7e3c9; /* light muted text */
 
-    font-size: 12px;
+    font-size: 12px; /* paragraph size */
 }
 
 
 .contact-links {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
+    display: flex; /* place contact links in row */
+    justify-content: center; /* center links */
+    gap: 25px; /* space between each link */
 }
 
 
 .contact-link {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
+    display: flex; /* use flex */
+    flex-direction: column; /* stack icon and text */
+    align-items: center; /* center both */
+    gap: 8px; /* space between icon and text */
 
-    color: #fff0d2;
+    color: #fff0d2; /* light text */
 
-    font-size: 11px;
-    text-decoration: none;
+    font-size: 11px; /* link size */
+    text-decoration: none; /* remove underline */
 
-    transition: 0.2s;
+    transition: 0.2s; /* smooth hover */
 }
 
 
 .contact-link i {
-    width: 48px;
-    height: 48px;
+    width: 48px; /* icon box width */
+    height: 48px; /* icon box height */
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: flex; /* center icon */
+    align-items: center; /* vertical center */
+    justify-content: center; /* horizontal center */
 
-    background-color: #f5d69f;
-    color: #59633f;
+    background-color: #f5d69f; /* light orange icon background */
+    color: #59633f; /* green icon */
 
-    border-radius: 12px;
+    border-radius: 12px; /* rounded square */
 
-    font-size: 18px;
+    font-size: 18px; /* icon size */
 }
 
 
 .contact-link:hover {
-    transform: translateY(-4px);
+    transform: translateY(-4px); /* lift link slightly */
 }
 
 
 .contact-link:hover i {
-    background-color: #d88648;
-    color: #fff7e9;
+    background-color: #d88648; /* orange on hover */
+    color: #fff7e9; /* light icon on hover */
 }
 
 
-/* =========================================================
-   GENERAL INTERIOR PAGES
-   ========================================================= */
+/* general interior pages */
 
 .page {
-    min-height: 100vh;
+    min-height: 100vh; /* fill full screen height */
 
-    margin-left: 220px;
+    margin-left: 220px; /* leave room for sidebar */
 
-    position: relative;
-    overflow: hidden;
+    position: relative; /* lets decorations be positioned */
+    overflow: hidden; /* hide anything outside page */
 
-    background-color: #dfe5cf;
+    background-color: #dfe5cf; /* main green background */
 }
 
 
 .page-header {
-    width: 82%;
-    max-width: 1000px;
+    width: 82%; /* header width */
+    max-width: 1000px; /* limit maximum width */
 
-    margin: 0 auto;
+    margin: 0 auto; /* center header */
 
-    padding: 75px 0 35px;
+    padding: 75px 0 35px; /* top and bottom spacing */
 
-    position: relative;
-    z-index: 3;
+    position: relative; /* lets z-index work */
+    z-index: 3; /* keep header above decorations */
 }
 
 
 .page-header h1 {
-    font-size: 55px;
+    font-size: 55px; /* interior page heading size */
 }
 
 
 .page-description {
-    max-width: 580px;
+    max-width: 580px; /* keep description readable */
 
-    margin: 20px 0 0;
+    margin: 20px 0 0; /* space above */
 
-    color: #596047;
+    color: #596047; /* muted green text */
 
-    font-size: 12px;
-    line-height: 1.8;
+    font-size: 12px; /* paragraph size */
+    line-height: 1.8; /* space between lines */
 }
 
 
 .page-content {
-    width: 82%;
-    max-width: 1000px;
+    width: 82%; /* content width */
+    max-width: 1000px; /* limit maximum width */
 
-    min-height: 350px;
+    min-height: 350px; /* keep space even if page is short */
 
-    margin: 0 auto 80px;
+    margin: 0 auto 80px; /* center and add bottom space */
 
-    position: relative;
-    z-index: 3;
+    position: relative; /* lets z-index work */
+    z-index: 3; /* keep content above decorations */
 }
 
 
-/* =========================================================
-   PORTFOLIO
-   project becomes scrapbook-style card
-   ========================================================= */
+/* portfolio cards */
 
 .project-card {
-    margin-bottom: 35px;
-    padding: 35px;
+    margin-bottom: 35px; /* space between project cards */
+    padding: 35px; /* inside spacing */
 
-    display: grid;
-    grid-template-columns: 65px 1fr;
-    gap: 25px;
+    display: grid; /* separate number and content */
+    grid-template-columns: 65px 1fr; /* number column + project info */
+    gap: 25px; /* space between columns */
 
-    background-color: #fff1d4;
+    background-color: #fff1d4; /* cream card */
 
-    border: 3px solid #bec58e;
-    border-radius: 20px;
+    border: 3px solid #bec58e; /* green border */
+    border-radius: 20px; /* rounded corners */
 
-    box-shadow: 9px 9px 0 #d78345;
+    box-shadow: 9px 9px 0 #d78345; /* orange retro shadow */
 }
 
 
 .project-number {
-    color: #d0763c;
+    color: #d0763c; /* orange number */
 
-    font-family: "Arial Rounded MT Bold", Arial, sans-serif;
-    font-size: 22px;
-    font-style: normal;
-    font-weight: bold;
+    font-family: "Arial Rounded MT Bold", Arial, sans-serif; /* playful font */
+    font-size: 22px; /* number size */
+    font-style: normal; /* remove style1 italic */
+    font-weight: bold; /* make it stand out */
 }
 
 
 .project-info {
-    max-width: 850px;
+    max-width: 850px; /* limit project content width */
 }
 
 
 .project-heading {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    display: flex; /* title and date on same row */
+    justify-content: space-between; /* push date right */
+    align-items: flex-start; /* align at top */
 
-    gap: 30px;
+    gap: 30px; /* space between title and date */
 
-    margin-bottom: 20px;
+    margin-bottom: 20px; /* space below heading */
 }
 
 
 .project-type {
-    margin: 0 0 7px;
+    margin: 0 0 7px; /* space below category */
 
-    color: #897345;
+    color: #897345; /* muted brown-green */
 
-    font-size: 10px;
-    font-weight: bold;
-    letter-spacing: 1.5px;
+    font-size: 10px; /* small label */
+    font-weight: bold; /* emphasize label */
+    letter-spacing: 1.5px; /* spread letters */
 }
 
 
 .project-heading h2 {
-    margin: 0;
+    margin: 0; /* remove default margin */
 
-    color: #485235;
+    color: #485235; /* dark green */
 
-    font-family: "Arial Rounded MT Bold", "Trebuchet MS", sans-serif;
-    font-size: 25px;
+    font-family: "Arial Rounded MT Bold", "Trebuchet MS", sans-serif; /* retro heading */
+    font-size: 25px; /* project title size */
 }
 
 
 .project-date {
-    margin: 7px 0 0;
+    margin: 7px 0 0; /* line up date with title */
 
-    color: #a06038;
+    color: #a06038; /* orange-brown */
 
-    font-size: 11px;
-    font-weight: bold;
+    font-size: 11px; /* date size */
+    font-weight: bold; /* make date clear */
 
-    white-space: nowrap;
+    white-space: nowrap; /* keep date on one line */
 }
 
 
 .project-description {
-    max-width: 720px;
+    max-width: 720px; /* keep paragraph readable */
 
-    margin: 0 0 12px;
+    margin: 0 0 12px; /* space between paragraphs */
 
-    color: #535940;
+    color: #535940; /* dark green-gray */
 
-    font-size: 12px;
-    line-height: 1.8;
+    font-size: 12px; /* paragraph size */
+    line-height: 1.8; /* line spacing */
 }
 
 
 .project-tags,
 .soft-skills {
-    display: flex;
-    flex-wrap: wrap;
+    display: flex; /* display tags in a row */
+    flex-wrap: wrap; /* let them wrap to next line */
 
-    gap: 8px;
+    gap: 8px; /* space between tags */
 
-    margin-top: 22px;
+    margin-top: 22px; /* space above tags */
 }
 
 
 .project-tags span,
 .soft-skills span {
-    padding: 7px 12px;
+    padding: 7px 12px; /* inside spacing */
 
-    background-color: #cbd39f;
-    color: #4c5535;
+    background-color: #cbd39f; /* light green tag */
+    color: #4c5535; /* dark green text */
 
-    border: 2px solid #9ca772;
-    border-radius: 8px;
+    border: 2px solid #9ca772; /* darker green outline */
+    border-radius: 8px; /* rounded tags */
 
-    font-size: 10px;
-    font-weight: bold;
+    font-size: 10px; /* tag text size */
+    font-weight: bold; /* make tags stand out */
 }
 
 
-/* =========================================================
-   RESUME & SKILLS
-   ========================================================= */
+/* resume & skills */
 
 .resume-section {
-    padding: 35px;
+    padding: 35px; /* space inside resume card */
 
-    background-color: #fff1d4;
+    background-color: #fff1d4; /* cream background */
 
-    border: 3px solid #bec58e;
-    border-radius: 20px;
+    border: 3px solid #bec58e; /* green border */
+    border-radius: 20px; /* rounded card */
 
-    box-shadow: 10px 10px 0 #d78345;
+    box-shadow: 10px 10px 0 #d78345; /* orange chunky shadow */
 }
 
 
 .section-heading {
-    margin-bottom: 25px;
+    margin-bottom: 25px; /* space below section heading */
 }
 
 
 .section-heading h2 {
-    margin: 0;
+    margin: 0; /* remove default margin */
 
-    color: #485235;
+    color: #485235; /* dark green */
 
-    font-family: "Arial Rounded MT Bold", "Trebuchet MS", sans-serif;
-    font-size: 27px;
+    font-family: "Arial Rounded MT Bold", "Trebuchet MS", sans-serif; /* playful heading */
+    font-size: 27px; /* section heading size */
 }
 
 
 .resume-frame {
-    width: 75%;
-    height: 600px;
+    width: 75%; /* resume viewer width */
+    height: 600px; /* resume viewer height */
 
-    padding: 12px;
+    padding: 12px; /* create border-like space */
 
-    background-color: #67724b;
+    background-color: #67724b; /* dark green frame */
 
-    border: none;
-    border-radius: 12px;
+    border: none; /* remove style1 border */
+    border-radius: 12px; /* rounded frame */
 
-    box-shadow: none;
+    box-shadow: none; /* remove style1 shadow */
 }
 
 
 .resume-frame iframe {
-    width: 100%;
-    height: 100%;
+    width: 100%; /* PDF fills frame width */
+    height: 100%; /* PDF fills frame height */
 
-    border: none;
+    border: none; /* remove iframe border */
 
-    background-color: white;
+    background-color: white; /* white behind PDF */
 }
 
 
 .resume-link {
-    display: inline-block;
+    display: inline-block; /* let padding work like a button */
 
-    margin-top: 20px;
-    padding: 10px 16px;
+    margin-top: 20px; /* space above link */
+    padding: 10px 16px; /* inside spacing */
 
-    background-color: #d78345;
-    color: #fff7e9;
+    background-color: #d78345; /* orange button */
+    color: #fff7e9; /* light text */
 
-    border: none;
-    border-radius: 9px;
+    border: none; /* no border */
+    border-radius: 9px; /* rounded corners */
 
-    font-family: "Trebuchet MS", Arial, sans-serif;
-    font-size: 11px;
-    font-weight: bold;
+    font-family: "Trebuchet MS", Arial, sans-serif; /* playful font */
+    font-size: 11px; /* link size */
+    font-weight: bold; /* make link stand out */
 
-    text-decoration: none;
+    text-decoration: none; /* remove underline */
 }
 
 
 .resume-link:hover {
-    background-color: #a95b32;
+    background-color: #a95b32; /* darker orange on hover */
 }
 
 
-/* =========================================================
-   ACTIVITIES
-   ========================================================= */
+/* activities */
 
 .activity-card {
-    margin-bottom: 35px;
-    padding: 35px;
+    margin-bottom: 35px; /* space between activity cards */
+    padding: 35px; /* inside spacing */
 
-    display: grid;
-    grid-template-columns: 65px 1fr;
-    gap: 25px;
+    display: grid; /* split number and content */
+    grid-template-columns: 65px 1fr; /* number column + activity info */
+    gap: 25px; /* space between columns */
 
-    background-color: #f3c88e;
+    background-color: #f3c88e; /* warm orange card */
 
-    border: 3px solid #b6a46f;
-    border-radius: 20px;
+    border: 3px solid #b6a46f; /* muted border */
+    border-radius: 20px; /* rounded card */
 
-    box-shadow: 9px 9px 0 #69744d;
+    box-shadow: 9px 9px 0 #69744d; /* green chunky shadow */
 }
 
 
 .activity-number {
-    color: #8c4f2c;
+    color: #8c4f2c; /* dark orange number */
 
-    font-family: "Arial Rounded MT Bold", Arial, sans-serif;
-    font-size: 22px;
-    font-style: normal;
-    font-weight: bold;
+    font-family: "Arial Rounded MT Bold", Arial, sans-serif; /* playful number */
+    font-size: 22px; /* number size */
+    font-style: normal; /* remove style1 italic */
+    font-weight: bold; /* make number stand out */
 }
 
 
 .activity-info {
-    max-width: 850px;
+    max-width: 850px; /* limit activity content width */
 }
 
 
 .activity-heading {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    display: flex; /* title and date on same row */
+    justify-content: space-between; /* push date to right */
+    align-items: flex-start; /* align both at top */
 
-    gap: 30px;
+    gap: 30px; /* space between title and date */
 
-    margin-bottom: 20px;
+    margin-bottom: 20px; /* space below heading */
 }
 
 
 .activity-type {
-    margin: 0 0 7px;
+    margin: 0 0 7px; /* space below category */
 
-    color: #7b5b36;
+    color: #7b5b36; /* muted brown */
 
-    font-size: 10px;
-    font-weight: bold;
-    letter-spacing: 1.5px;
+    font-size: 10px; /* small label */
+    font-weight: bold; /* make label stand out */
+    letter-spacing: 1.5px; /* spread letters */
 }
 
 
 .activity-heading h2 {
-    margin: 0;
+    margin: 0; /* remove default heading margin */
 
-    color: #465034;
+    color: #465034; /* dark green */
 
-    font-family: "Arial Rounded MT Bold", "Trebuchet MS", sans-serif;
-    font-size: 25px;
+    font-family: "Arial Rounded MT Bold", "Trebuchet MS", sans-serif; /* playful heading */
+    font-size: 25px; /* activity title size */
 }
 
 
 .activity-role {
-    margin: 6px 0 0;
+    margin: 6px 0 0; /* space above role */
 
-    color: #7a5335;
+    color: #7a5335; /* brown role text */
 
-    font-size: 13px;
-    font-weight: bold;
+    font-size: 13px; /* role size */
+    font-weight: bold; /* make role clear */
 }
 
 
 .activity-date {
-    margin: 7px 0 0;
+    margin: 7px 0 0; /* align date with heading */
 
-    color: #83502e;
+    color: #83502e; /* dark orange-brown */
 
-    font-size: 11px;
-    font-weight: bold;
+    font-size: 11px; /* date size */
+    font-weight: bold; /* emphasize date */
 
-    white-space: nowrap;
+    white-space: nowrap; /* keep date on one line */
 }
 
 
 .activity-description {
-    max-width: 720px;
+    max-width: 720px; /* keep paragraph readable */
 
-    margin: 0 0 12px;
+    margin: 0 0 12px; /* space between paragraphs */
 
-    color: #4f543d;
+    color: #4f543d; /* dark green-gray */
 
-    font-size: 12px;
-    line-height: 1.8;
+    font-size: 12px; /* paragraph size */
+    line-height: 1.8; /* line spacing */
 }
 
 
-/* =========================================================
-   FOOTER
-   ========================================================= */
+/* footer */
 
 footer {
-    margin-left: 220px;
-    padding: 22px;
+    margin-left: 220px; /* leave room for sidebar */
+    padding: 22px; /* inside spacing */
 
-    background-color: #59633f;
-    color: #efe5c4;
+    background-color: #59633f; /* dark green footer */
+    color: #efe5c4; /* light cream text */
 
-    text-align: center;
+    text-align: center; /* center footer content */
 
-    font-family: "Trebuchet MS", Arial, sans-serif;
-    font-size: 11px;
+    font-family: "Trebuchet MS", Arial, sans-serif; /* match retro font */
+    font-size: 11px; /* footer text size */
 }
 
 
-/* =========================================================
-   SMALLER SCREENS
-   ========================================================= */
+/* smaller screens */
 
 @media(max-width: 900px) {
 
     .navbar {
-        width: 100%;
-        height: auto;
+        width: 100%; /* change sidebar into full-width navbar */
+        height: auto; /* let height grow based on content */
 
-        padding: 10px 15px;
+        padding: 10px 15px; /* smaller screen spacing */
 
-        position: relative;
+        position: relative; /* stop sidebar from staying fixed */
 
-        border-right: none;
-        border-bottom: 4px solid #d88545;
+        border-right: none; /* remove side border */
+        border-bottom: 4px solid #d88545; /* add orange bottom border */
     }
 
     .logo {
-    margin: 0 auto 15px;
-    justify-content: center;
+        margin: 0 auto 15px; /* center logo and add space below */
+        justify-content: center; /* center flower and text */
 
-    font-size: 19px;
-    text-align: center;
+        font-size: 19px; /* smaller logo */
+        text-align: center; /* center text */
     }
 
     .navbar::after {
-        display: none;
+        display: none; /* hide big leaf decoration */
     }
 
     .nav-links {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
+        flex-direction: row; /* change links back into a row */
+        flex-wrap: wrap; /* allow links to wrap */
+        justify-content: center; /* center links */
 
-        gap: 5px;
+        gap: 5px; /* smaller spacing */
     }
 
     .style-toggle {
-        margin: 14px auto 0;
+        margin: 14px auto 0; /* add some space around toggle */
     }
 
     .landing-page,
     .page {
-        margin-left: 0;
+        margin-left: 0; /* remove space for sidebar */
     }
 
     .hero {
-        width: 86%;
+        width: 86%; /* use most of screen width */
 
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* stack hero into one column */
 
-        gap: 15px;
+        gap: 15px; /* smaller gap */
 
-        padding: 10px 0;
+        padding: 10px 0; /* vertical spacing */
     }
 
     .hero-photo {
-        grid-column: 1;
-        grid-row: 2;
+        grid-column: 1; /* only column */
+        grid-row: 2; /* photo goes under text */
 
-        min-height: auto;
+        min-height: auto; /* let photo decide its height */
     }
 
     .hero-text {
-        grid-column: 1;
-        grid-row: 1;
+        grid-column: 1; /* only column */
+        grid-row: 1; /* text goes first */
 
-        text-align: center;
+        text-align: center; /* center text */
     }
 
     .description {
-        margin-left: auto;
-        margin-right: auto;
+        margin-left: auto; /* center paragraph */
+        margin-right: auto; /* center paragraph */
     }
 
     .hero-buttons {
-        justify-content: center;
+        justify-content: center; /* center buttons */
     }
 
     .quick-intro {
-        grid-template-columns: 1fr;
-        padding-top: 25px;
+        grid-template-columns: 1fr; /* stack intro cards vertically */
+        padding-top: 25px; /* space above cards */
     }
 
     .contact-links {
-        flex-wrap: wrap;
+        flex-wrap: wrap; /* let contact links wrap */
     }
 
     .resume-frame {
-        width: 100%;
+        width: 100%; /* make resume viewer fill width */
     }
 
     footer {
-        margin-left: 0;
+        margin-left: 0; /* remove sidebar space */
     }
 }
 
@@ -1330,32 +1281,32 @@ footer {
 
     h1,
     .page-header h1 {
-        font-size: 40px;
+        font-size: 40px; /* smaller headings */
     }
 
     h1 span {
-        font-size: 48px;
+        font-size: 48px; /* smaller name text */
     }
 
     .photo-wrapper,
     .photo-frame {
-        width: 250px;
-        height: 340px;
+        width: 250px; /* smaller photo width */
+        height: 340px; /* smaller photo height */
     }
 
     .project-card,
     .activity-card {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* stack number and content */
     }
 
     .project-heading,
     .activity-heading {
-        flex-direction: column;
+        flex-direction: column; /* stack title and date */
 
-        gap: 5px;
+        gap: 5px; /* smaller spacing */
     }
 
     .resume-frame {
-        height: 500px;
+        height: 500px; /* smaller resume viewer */
     }
 }

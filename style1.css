@@ -1,3 +1,4 @@
+/*style 1 basic boho */
 * {
     box-sizing: border-box; /* include padding and border inside the element's total size */
 }
@@ -99,7 +100,7 @@ body {
     transition: 0.4s; /* smooth hover color change */
 }
 
-.style-toggle {
+/* .style-toggle {
     margin-left: auto;
     padding: 9px 16px;
     background-color: #e8ddd2;
@@ -110,7 +111,7 @@ body {
     font-size: 11px;
     cursor: pointer;
     transition: 0.25s;
-}
+} */
 
 .nav-links a:hover {
     color: #9a735c; /* lighter brown when hovering */
