@@ -1,0 +1,1361 @@
+/* =========================================================
+   STYLE 2 — RETRO BOTANICAL
+   completely different layout from style1
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: #dfe5cf;
+    color: #41472f;
+    font-family: "Trebuchet MS", "Arial Rounded MT Bold", Arial, sans-serif;
+}
+
+
+/* =========================================================
+   LEFT SIDEBAR NAVIGATION
+   ========================================================= */
+
+.navbar {
+    width: 200px;
+    height: 100vh;
+    padding: 42px 26px 30px;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20;
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    background-color: #5f6845;
+    border-right: 5px solid #d88545;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 45px;
+
+
+    color: #fff1d6;
+    text-decoration: none;
+    font-family: "Arial Rounded MT Bold", "Trebuchet MS", sans-serif;
+    font-size: 23px;
+    font-weight: bold;
+
+    text-align: center;
+}
+
+.logo-star {
+    display: none;
+}
+
+.logo-flower {
+    display: inline;
+    font-size: 24px;
+}
+
+/* little site title without changing HTML */
+ /* .navbar::before {
+    content: "✿ TRACY ✿";
+    margin-bottom: 45px;
+
+    color: #fff1d6;
+
+    font-family: "Arial Rounded MT Bold", "Trebuchet MS", sans-serif;
+    font-size: 23px;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    text-align: center;
+}  */
+
+
+/* leaf decoration at bottom of sidebar */
+.navbar::after {
+    content: "❧";
+    margin-top: auto;
+
+    color: #b9c58b;
+
+    font-family: Georgia, serif;
+    font-size: 70px;
+
+    text-align: center;
+    transform: rotate(-25deg);
+}
+
+
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+}
+
+
+.nav-links a {
+    padding: 11px 15px;
+
+    color: #f7efd9;
+
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+    /* letter-spacing: 0.4px; */
+
+    border-radius: 14px;
+
+    transition: 0.25s;
+}
+
+
+.nav-links a:hover {
+    background-color: #737d55;
+    transform: translateX(5px);
+}
+
+
+.nav-links .active {
+    background-color: #d88545;
+    color: #fff7e8;
+
+    border: none;
+}
+
+
+/* style-switching button */
+.style-toggle {
+    position: fixed;
+    right: 20px;
+    top: 80%;
+    transform: translateY(calc(-50% + var(--scroll-move, 0px)));
+    z-index: 1000;
+
+    width: 44px;
+    height: 44px;
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #f3a35c;
+    color: #4f6038;
+
+    border: 2px solid #4f6038;
+    border-radius: 50%;
+
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.toggle-icon {
+    margin: 0;
+    font-size: 23px;
+    color: #4f6038;
+}
+
+.toggle-label {
+    position: absolute;
+    right: 52px;
+
+    background-color: #4f6038;
+    color: #fff7e8;
+
+    padding: 7px 11px;
+    border-radius: 4px;
+
+    font-size: 11px;
+    white-space: nowrap;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.2s;
+}
+
+.style-toggle:hover .toggle-label {
+    opacity: 1;
+    visibility: visible;
+}
+
+.style-toggle:hover {
+    transform: translateY(-50%) scale(1.08);
+}
+
+.style-toggle:hover .toggle-icon {
+    color: #fff7e8;
+}
+
+
+/* =========================================================
+   MAIN LANDING PAGE
+   ========================================================= */
+
+.landing-page {
+    min-height: 100vh;
+    margin-left: 220px;
+
+    position: relative;
+    overflow: hidden;
+
+    background-color: #dfe5cf;
+
+    /* subtle retro paper effect */
+    background-image:
+        radial-gradient(circle at 10% 15%, rgba(255,255,255,.38) 0 2px, transparent 3px),
+        radial-gradient(circle at 80% 70%, rgba(90,100,65,.09) 0 2px, transparent 3px);
+    background-size: 34px 34px, 42px 42px;
+}
+
+
+/* =========================================================
+   RETRO HERO
+   ========================================================= */
+
+.hero {
+    width: 86%;
+    max-width: 1100px;
+    min-height: 610px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    /* photo on left, text on right */
+    grid-template-columns: 0.85fr 1.15fr;
+
+    align-items: center;
+    gap: 75px;
+
+    position: relative;
+    z-index: 3;
+}
+
+
+/* move photo to left */
+.hero-photo {
+    grid-column: 1;
+    grid-row: 1;
+
+    min-height: 500px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* move text to right */
+.hero-text {
+    grid-column: 2;
+    grid-row: 1;
+
+    padding: 40px 0;
+
+    position: relative;
+}
+
+
+/* little retro label */
+
+.eyebrow {
+    display: inline-block;
+
+    margin: 0 0 15px;
+    padding: 8px 13px;
+
+    background-color: #f4d49d;
+    color: #78603e;
+
+    border-radius: 8px;
+
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+
+    transform: rotate(-1deg);
+}
+
+
+/* main heading */
+
+h1 {
+    margin: 0;
+
+    color: #4d5936;
+
+    font-family: "Arial Rounded MT Bold", "Trebuchet MS", sans-serif;
+    font-size: 55px;
+    font-weight: bold;
+    line-height: 0.98;
+
+    letter-spacing: -1px;
+}
+
+
+h1 span {
+    display: inline-block;
+
+    margin-top: 5px;
+
+    color: #cf783c;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 65px;
+    font-style: italic;
+    font-weight: bold;
+
+    transform: rotate(-2deg);
+}
+
+
+/* tagline */
+
+.tagline {
+    margin: 23px 0 15px;
+
+    color: #68704d;
+
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+/* intro paragraph */
+
+.description {
+    max-width: 400px;
+
+    margin: 0 0 27px;
+
+    color: #50573d;
+
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+
+.description a {
+    color: #b96231;
+
+    font-weight: bold;
+    text-decoration: none;
+
+    border-bottom: 2px dotted #b96231;
+}
+
+
+.description a:hover {
+    color: #794023;
+}
+
+
+/* =========================================================
+   HERO BUTTONS
+   ========================================================= */
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+
+.primary-button {
+    display: inline-block;
+
+    padding: 14px 24px;
+
+    background-color: #59633f;
+    color: #fff3d8;
+
+    border: 3px solid #59633f;
+    border-radius: 12px;
+
+    text-decoration: none;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    box-shadow: 5px 5px 0 #d88545;
+
+    transition: 0.2s;
+}
+
+
+.primary-button:hover {
+    transform: translate(-2px, -2px);
+
+    box-shadow: 8px 8px 0 #d88545;
+}
+
+
+.secondary-button {
+    padding: 12px 17px;
+
+    color: #925228;
+
+    border: 2px dashed #d88545;
+    border-radius: 10px;
+
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+
+    text-decoration: none;
+
+    background-color: rgba(255, 244, 220, 0.5);
+}
+
+
+.secondary-button:hover {
+    background-color: #f5d9a7;
+}
+
+
+/* =========================================================
+   POLAROID PHOTO
+   ========================================================= */
+
+.photo-wrapper {
+    width: 310px;
+    height: 400px;
+
+    position: relative;
+
+
+    transform: rotate(-4deg);
+}
+
+
+.photo-frame {
+    width: 310px;
+    height: 420px;
+
+    padding: 14px 14px 55px;
+
+    position: relative;
+    z-index: 3;
+
+    background-color: #fff4dd;
+
+    border: 2px solid #c5b68d;
+    border-radius: 3px;
+
+    box-shadow: 12px 14px 0 rgba(91, 99, 64, 0.25);
+}
+
+
+.photo {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    border-radius: 0;
+}
+
+
+/* fake tape decoration */
+
+.arch-outline {
+    width: 85px;
+    height: 26px;
+
+    position: absolute;
+    top: -13px;
+    left: -24px;
+    z-index: 5;
+
+    background-color: rgba(218, 161, 92, 0.65);
+
+    border: none;
+    border-radius: 1px;
+
+    transform: rotate(-38deg);
+}
+
+
+/* photo caption */
+
+.photo-note {
+    width: 100%;
+
+    position: absolute;
+    right: auto;
+    left: 0;
+    bottom: 10px;
+    z-index: 6;
+
+    padding: 0;
+
+    background: none;
+    border: none;
+    box-shadow: none;
+
+    color: #7a6041;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 15px;
+    font-style: italic;
+
+    text-align: center;
+
+    transform: none;
+}
+
+
+/* little stars become retro flowers */
+
+.little-star {
+    position: absolute;
+    z-index: 7;
+
+    color: #d27a3f;
+
+    font-size: 28px;
+}
+
+
+.star-one {
+    top: 25px;
+    right: -35px;
+}
+
+
+.star-two {
+    left: -28px;
+    bottom: 60px;
+
+    color: #68734d;
+}
+
+
+/* =========================================================
+   DECORATIVE SHAPES
+   turn existing circles into leaf graphics
+   ========================================================= */
+
+.shape {
+    position: absolute;
+    z-index: 1;
+
+    border-radius: 100% 0 100% 0;
+}
+
+
+.shape-one {
+    width: 180px;
+    height: 300px;
+
+    top: -80px;
+    right: -20px;
+
+    background-color: #899467;
+
+    transform: rotate(35deg);
+
+    opacity: 0.7;
+}
+
+
+.shape-two {
+    width: 210px;
+    height: 340px;
+
+    left: -75px;
+    bottom: 70px;
+
+    background-color: #c5753e;
+
+    transform: rotate(-25deg);
+
+    opacity: 0.55;
+}
+
+
+.shape-three {
+    width: 100px;
+    height: 170px;
+
+    top: 260px;
+    left: 48%;
+
+    background-color: #a8b180;
+
+    border: none;
+
+    transform: rotate(50deg);
+
+    opacity: 0.65;
+}
+
+
+/* extra leafy graphics */
+
+.landing-page::before {
+    content: "❧";
+
+    position: absolute;
+    top: 70px;
+    right: 55px;
+    z-index: 2;
+
+    color: #647049;
+
+    font-family: Georgia, serif;
+    font-size: 110px;
+
+    transform: rotate(35deg);
+
+    opacity: 0.65;
+}
+
+
+.landing-page::after {
+    content: "❧";
+
+    position: absolute;
+    left: 250px;
+    bottom: 110px;
+    z-index: 1;
+
+    color: #d07b41;
+
+    font-family: Georgia, serif;
+    font-size: 90px;
+
+    transform: rotate(-110deg);
+
+    opacity: 0.5;
+}
+
+
+/* =========================================================
+   QUICK INTRO
+   now looks like three retro cards instead of one clean row
+   ========================================================= */
+
+.quick-intro {
+    width: 84%;
+    max-width: 1050px;
+
+    margin: 0px auto 70px;
+    padding: 0;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 23px;
+
+    position: relative;
+    z-index: 4;
+
+    border: none;
+}
+
+
+.intro-item {
+    min-height: 180px;
+
+    padding: 27px 23px;
+
+    display: block;
+
+    position: relative;
+
+    background-color: #fff0d2;
+
+    border: 2px solid #b9a877;
+    border-radius: 18px;
+
+    box-shadow: 7px 7px 0 #9aa574;
+
+    transition: 0.2s;
+}
+
+
+.intro-item:nth-child(2) {
+    background-color: #edb675;
+
+    transform: rotate(1.5deg);
+}
+
+
+.intro-item:nth-child(3) {
+    background-color: #c4cf9e;
+
+    transform: rotate(-1.5deg);
+}
+
+
+.intro-item:hover {
+    transform: translateY(-5px) rotate(-1deg);
+}
+
+
+.number {
+    display: inline-block;
+
+    margin-bottom: 15px;
+
+    color: #c26835;
+
+    font-family: "Arial Rounded MT Bold", Arial, sans-serif;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: bold;
+}
+
+
+.intro-item h2 {
+    margin: 0 0 10px;
+
+    color: #475033;
+
+    font-family: "Arial Rounded MT Bold", "Trebuchet MS", sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+
+.intro-item p {
+    margin: 0;
+
+    color: #53573f;
+
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   CONTACT SECTION
+   ========================================================= */
+
+.contact-section {
+    width: 84%;
+    max-width: 1050px;
+
+    margin: 20px auto 70px;
+    padding: 45px 30px;
+
+    position: relative;
+    z-index: 4;
+
+    text-align: center;
+
+    background-color: #65704b;
+
+    border-radius: 28px 8px 28px 8px;
+
+    box-shadow: 10px 10px 0 #d48345;
+}
+
+
+.contact-label {
+    margin: 0 0 10px;
+
+    color: #edc88e;
+
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+
+.contact-section h2 {
+    margin: 0 0 12px;
+
+    color: #fff2d6;
+
+    font-family: "Arial Rounded MT Bold", "Trebuchet MS", sans-serif;
+    font-size: 32px;
+}
+
+
+.contact-description {
+    margin: 0 auto 28px;
+
+    color: #e7e3c9;
+
+    font-size: 12px;
+}
+
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+
+.contact-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+
+    color: #fff0d2;
+
+    font-size: 11px;
+    text-decoration: none;
+
+    transition: 0.2s;
+}
+
+
+.contact-link i {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #f5d69f;
+    color: #59633f;
+
+    border-radius: 12px;
+
+    font-size: 18px;
+}
+
+
+.contact-link:hover {
+    transform: translateY(-4px);
+}
+
+
+.contact-link:hover i {
+    background-color: #d88648;
+    color: #fff7e9;
+}
+
+
+/* =========================================================
+   GENERAL INTERIOR PAGES
+   ========================================================= */
+
+.page {
+    min-height: 100vh;
+
+    margin-left: 220px;
+
+    position: relative;
+    overflow: hidden;
+
+    background-color: #dfe5cf;
+}
+
+
+.page-header {
+    width: 82%;
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+    padding: 75px 0 35px;
+
+    position: relative;
+    z-index: 3;
+}
+
+
+.page-header h1 {
+    font-size: 55px;
+}
+
+
+.page-description {
+    max-width: 580px;
+
+    margin: 20px 0 0;
+
+    color: #596047;
+
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+
+.page-content {
+    width: 82%;
+    max-width: 1000px;
+
+    min-height: 350px;
+
+    margin: 0 auto 80px;
+
+    position: relative;
+    z-index: 3;
+}
+
+
+/* =========================================================
+   PORTFOLIO
+   project becomes scrapbook-style card
+   ========================================================= */
+
+.project-card {
+    margin-bottom: 35px;
+    padding: 35px;
+
+    display: grid;
+    grid-template-columns: 65px 1fr;
+    gap: 25px;
+
+    background-color: #fff1d4;
+
+    border: 3px solid #bec58e;
+    border-radius: 20px;
+
+    box-shadow: 9px 9px 0 #d78345;
+}
+
+
+.project-number {
+    color: #d0763c;
+
+    font-family: "Arial Rounded MT Bold", Arial, sans-serif;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: bold;
+}
+
+
+.project-info {
+    max-width: 850px;
+}
+
+
+.project-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    gap: 30px;
+
+    margin-bottom: 20px;
+}
+
+
+.project-type {
+    margin: 0 0 7px;
+
+    color: #897345;
+
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+
+.project-heading h2 {
+    margin: 0;
+
+    color: #485235;
+
+    font-family: "Arial Rounded MT Bold", "Trebuchet MS", sans-serif;
+    font-size: 25px;
+}
+
+
+.project-date {
+    margin: 7px 0 0;
+
+    color: #a06038;
+
+    font-size: 11px;
+    font-weight: bold;
+
+    white-space: nowrap;
+}
+
+
+.project-description {
+    max-width: 720px;
+
+    margin: 0 0 12px;
+
+    color: #535940;
+
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+
+.project-tags,
+.soft-skills {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-top: 22px;
+}
+
+
+.project-tags span,
+.soft-skills span {
+    padding: 7px 12px;
+
+    background-color: #cbd39f;
+    color: #4c5535;
+
+    border: 2px solid #9ca772;
+    border-radius: 8px;
+
+    font-size: 10px;
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   RESUME & SKILLS
+   ========================================================= */
+
+.resume-section {
+    padding: 35px;
+
+    background-color: #fff1d4;
+
+    border: 3px solid #bec58e;
+    border-radius: 20px;
+
+    box-shadow: 10px 10px 0 #d78345;
+}
+
+
+.section-heading {
+    margin-bottom: 25px;
+}
+
+
+.section-heading h2 {
+    margin: 0;
+
+    color: #485235;
+
+    font-family: "Arial Rounded MT Bold", "Trebuchet MS", sans-serif;
+    font-size: 27px;
+}
+
+
+.resume-frame {
+    width: 75%;
+    height: 600px;
+
+    padding: 12px;
+
+    background-color: #67724b;
+
+    border: none;
+    border-radius: 12px;
+
+    box-shadow: none;
+}
+
+
+.resume-frame iframe {
+    width: 100%;
+    height: 100%;
+
+    border: none;
+
+    background-color: white;
+}
+
+
+.resume-link {
+    display: inline-block;
+
+    margin-top: 20px;
+    padding: 10px 16px;
+
+    background-color: #d78345;
+    color: #fff7e9;
+
+    border: none;
+    border-radius: 9px;
+
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+
+    text-decoration: none;
+}
+
+
+.resume-link:hover {
+    background-color: #a95b32;
+}
+
+
+/* =========================================================
+   ACTIVITIES
+   ========================================================= */
+
+.activity-card {
+    margin-bottom: 35px;
+    padding: 35px;
+
+    display: grid;
+    grid-template-columns: 65px 1fr;
+    gap: 25px;
+
+    background-color: #f3c88e;
+
+    border: 3px solid #b6a46f;
+    border-radius: 20px;
+
+    box-shadow: 9px 9px 0 #69744d;
+}
+
+
+.activity-number {
+    color: #8c4f2c;
+
+    font-family: "Arial Rounded MT Bold", Arial, sans-serif;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: bold;
+}
+
+
+.activity-info {
+    max-width: 850px;
+}
+
+
+.activity-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    gap: 30px;
+
+    margin-bottom: 20px;
+}
+
+
+.activity-type {
+    margin: 0 0 7px;
+
+    color: #7b5b36;
+
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+
+.activity-heading h2 {
+    margin: 0;
+
+    color: #465034;
+
+    font-family: "Arial Rounded MT Bold", "Trebuchet MS", sans-serif;
+    font-size: 25px;
+}
+
+
+.activity-role {
+    margin: 6px 0 0;
+
+    color: #7a5335;
+
+    font-size: 13px;
+    font-weight: bold;
+}
+
+
+.activity-date {
+    margin: 7px 0 0;
+
+    color: #83502e;
+
+    font-size: 11px;
+    font-weight: bold;
+
+    white-space: nowrap;
+}
+
+
+.activity-description {
+    max-width: 720px;
+
+    margin: 0 0 12px;
+
+    color: #4f543d;
+
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+    margin-left: 220px;
+    padding: 22px;
+
+    background-color: #59633f;
+    color: #efe5c4;
+
+    text-align: center;
+
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   SMALLER SCREENS
+   ========================================================= */
+
+@media(max-width: 900px) {
+
+    .navbar {
+        width: 100%;
+        height: auto;
+
+        padding: 10px 15px;
+
+        position: relative;
+
+        border-right: none;
+        border-bottom: 4px solid #d88545;
+    }
+
+    .logo {
+    margin: 0 auto 15px;
+    justify-content: center;
+
+    font-size: 19px;
+    text-align: center;
+    }
+
+    .navbar::after {
+        display: none;
+    }
+
+    .nav-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        gap: 5px;
+    }
+
+    .style-toggle {
+        margin: 14px auto 0;
+    }
+
+    .landing-page,
+    .page {
+        margin-left: 0;
+    }
+
+    .hero {
+        width: 86%;
+
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+
+        padding: 10px 0;
+    }
+
+    .hero-photo {
+        grid-column: 1;
+        grid-row: 2;
+
+        min-height: auto;
+    }
+
+    .hero-text {
+        grid-column: 1;
+        grid-row: 1;
+
+        text-align: center;
+    }
+
+    .description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .quick-intro {
+        grid-template-columns: 1fr;
+        padding-top: 25px;
+    }
+
+    .contact-links {
+        flex-wrap: wrap;
+    }
+
+    .resume-frame {
+        width: 100%;
+    }
+
+    footer {
+        margin-left: 0;
+    }
+}
+
+
+@media(max-width: 600px) {
+
+    h1,
+    .page-header h1 {
+        font-size: 40px;
+    }
+
+    h1 span {
+        font-size: 48px;
+    }
+
+    .photo-wrapper,
+    .photo-frame {
+        width: 250px;
+        height: 340px;
+    }
+
+    .project-card,
+    .activity-card {
+        grid-template-columns: 1fr;
+    }
+
+    .project-heading,
+    .activity-heading {
+        flex-direction: column;
+
+        gap: 5px;
+    }
+
+    .resume-frame {
+        height: 500px;
+    }
+}

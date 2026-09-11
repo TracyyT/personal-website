@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bagel's Corner | Tracy Tran</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background-color: #fff8f0;
+            color: #51463e;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* Navigation */
+
+        .navbar {
+            height: 65px;
+            padding: 0 6%;
+            display: flex;
+            align-items: center;
+            background-color: rgba(246, 240, 232, 0.96);
+            border-bottom: 1px solid #ded1c4;
+            z-index: 10;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: clamp(18px, 3vw, 45px);
+        }
+
+        .nav-links a {
+            color: #6d6057;
+            text-decoration: none;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links a:hover {
+            color: #9a735c;
+        }
+
+        .nav-links .active {
+            color: #805f4b;
+            border-bottom: 1px solid #805f4b;
+            padding-bottom: 1px;
+        }
+
+        /* Sandbox */
+
+        .sandbox-page {
+            min-height: calc(100vh - 65px);
+            position: relative;
+            overflow: hidden;
+            padding: 70px 7%;
+        }
+
+        .sandbox-header {
+            max-width: 750px;
+            margin: 0 auto 45px;
+            text-align: center;
+        }
+
+        .eyebrow {
+            margin: 0 0 10px;
+            color: #a17d67;
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        h1 {
+            margin: 0;
+            color: #4f4138;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 50px;
+            font-weight: normal;
+        }
+
+        .sandbox-header p:last-child {
+            color: #746960;
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        /* Bagel Card */
+
+        .bagel-card {
+            max-width: 750px;
+            margin: 0 auto;
+            padding: 45px;
+            background-color: #f1e5d9;
+            border: 1px solid #d9cabe;
+            border-radius: 25px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 15px 35px rgba(87, 67, 54, 0.1);
+        }
+
+        .dog-icon {
+            width: 95px;
+            height: 95px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #dfcdbd;
+            border-radius: 50%;
+            font-size: 45px;
+        }
+
+        .bagel-card h2 {
+            margin: 0 0 10px;
+            color: #654f41;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 30px;
+            font-weight: normal;
+        }
+
+        .bagel-intro {
+            max-width: 500px;
+            margin: 0 auto 25px;
+            color: #746960;
+            font-size: 12px;
+            line-height: 1.8;
+        }
+
+        .bagel-facts {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 28px;
+        }
+
+        .bagel-facts span {
+            padding: 8px 14px;
+            background-color: #fffaf4;
+            border: 1px solid #d5c3b4;
+            border-radius: 20px;
+            color: #765a49;
+            font-size: 11px;
+        }
+
+        /* Pet Button */
+
+        .pet-button {
+            padding: 12px 25px;
+            background-color: #8c6a55;
+            color: #fffaf5;
+            border: none;
+            border-radius: 30px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: 0.25s;
+        }
+
+        .pet-button:hover {
+            background-color: #705342;
+            transform: translateY(-2px);
+        }
+
+        #pet-message {
+            min-height: 20px;
+            margin: 15px 0 0;
+            color: #8c6a55;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        /* Prompt */
+
+        .prompt-section {
+            max-width: 750px;
+            margin: 55px auto 0;
+        }
+
+        .prompt-section h2 {
+            color: #654f41;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 22px;
+            font-weight: normal;
+        }
+
+        .prompt-section p {
+            color: #746960;
+            font-size: 12px;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 130px;
+            padding: 18px;
+            background-color: #fffaf4;
+            border: 1px solid #d5c3b4;
+            border-radius: 10px;
+            color: #625850;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            line-height: 1.6;
+            resize: vertical;
+        }
+
+        footer {
+            padding: 24px;
+            text-align: center;
+            background-color: #e8ddd2;
+            color: #827064;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar">
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="qualifications.html">Qualifications</a>
+            <a href="activities.html">Activities</a>
+            <a href="sandbox.html" class="active">Sandbox</a>
+        </nav>
+    </header>
+
+
+    <main class="sandbox-page">
+
+        <section class="sandbox-header">
+            <p class="eyebrow">WELCOME TO</p>
+
+            <h1>Bagel's Corner.</h1>
+
+            <p>
+                A tiny corner of my website dedicated to my favorite
+                four-legged companion.
+            </p>
+        </section>
+
+
+        <section class="bagel-card">
+
+            <div class="dog-icon">
+                🐶
+            </div>
+
+            <h2>Meet Bagel!</h2>
+
+            <p class="bagel-intro">
+                Bagel is my Pembroke Welsh Corgi and adventure buddy.
+                He loves exploring, getting attention, and being involved
+                in almost everything I do.
+            </p>
+
+            <div class="bagel-facts">
+                <span>🐾 Corgi</span>
+                <span>♡ Professional Cuddler</span>
+                <span>✦ Adventure Buddy</span>
+            </div>
+
+            <button class="pet-button" onclick="petBagel()">
+                Pet Bagel ♡
+            </button>
+
+            <p id="pet-message"></p>
+
+        </section>
+
+
+        <section class="prompt-section">
+
+            <h2>Prompt Used to Create This Page</h2>
+
+            <p>
+                This sandbox page was created with the assistance of generative AI.
+            </p>
+
+            <textarea readonly>Create an interactive sandbox webpage about my Corgi named Bagel. Include a warm beige boho aesthetic, a short introduction about Bagel, fun fact tags, and an interactive "Pet Bagel" button that displays a cute response when clicked. Include a navigation bar linking to Home, Portfolio, Resume & Skills, Activities, and Sandbox. Use only HTML, inline CSS, and JavaScript contained within the HTML file.</textarea>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>Designed & built by Tracy Tran</p>
+    </footer>
+
+
+    <script>
+        function petBagel() {
+            const messages = [
+                "Bagel is happy! ♡",
+                "You earned a corgi smile!",
+                "Bagel wants another pet!",
+                "Tail wag activated! ✦"
+            ];
+
+            const randomMessage =
+                messages[Math.floor(Math.random() * messages.length)];
+
+            document.getElementById("pet-message").textContent =
+                randomMessage;
+        }
+    </script>
+
+</body>
+
+</html>

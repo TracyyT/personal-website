@@ -1,0 +1,964 @@
+* {
+    box-sizing: border-box; /* include padding and border inside the element's total size */
+}
+
+html {
+    scroll-behavior: smooth; /* smooth scrolling when clicking links to sections */
+}
+
+body {
+    margin: 0; /* remove browser default margin */
+    background-color: #FFF8F0; /* main light cream background */
+    color: #51463e; /* default text color */
+    font-family: Arial, Helvetica, sans-serif; /* main font for normal text */
+}
+
+/* some boho layouts for my general pages :) */
+
+.page {
+    min-height: calc(100vh - 65px); /* subtract height of topbar */
+    position: relative; /* lets decorative elements be positioned relative to the page */
+    overflow: hidden; /* hide anything that goes outside the page */
+}
+
+.page-header {
+    width: 86%; /* how much width the page header takes */
+    max-width: 1100px; /* stop it from getting too wide */
+    margin: 0 auto; /* center it horizontally */
+    padding: 80px 0 40px; /* top, right/left, bottom */
+    position: relative; /* lets z-index work */
+    z-index: 2; /* place header above background decorations */
+}
+
+.page-header h1 {
+    font-size: 48px; /* size for header text */
+    line-height: 1; /* space between lines */
+}
+
+/* page description is the text under the header */
+.page-description {
+    max-width: 550px; /* stop paragraph from getting too wide */
+    margin: 18px 0 0; /* space above description */
+    color: #746960; /* softer brown-gray text */
+    font-size: 13px; /* smaller paragraph size */
+    line-height: 1.8; /* add space between lines */
+}
+
+/* text and images and other content */
+.page-content {
+    width: 86%; /* content takes most of the screen */
+    max-width: 1100px; /* limit content width */
+    min-height: 350px; /* keep some space even if content is short */
+    margin: 0 auto 70px; /* center and add space under content */
+    position: relative; /* lets z-index work */
+    z-index: 2; /* keep content above background shapes */
+}
+
+/* navigation bar */
+.navbar {
+    height: 65px; /* fixed height for topbar */
+    padding: 0 5%; /* spacing on left and right */
+    display: flex; /* put navigation items in one row */
+    align-items: center; /* vertically center items */
+    justify-content: space-between; /* separate items across the bar */
+    background-color: rgba(246, 240, 232, 0.96); /* slightly transparent beige */
+    border-bottom: 1px solid #ded1c4; /* small divider line */
+    position: relative; /* lets z-index work */
+    z-index: 10; /* keep navbar above other page elements */
+}
+
+.logo {
+    font-family: Georgia, "Times New Roman", serif; /* more elegant font for logo */
+    font-size: 20px; /* logo text size */
+    color: #684f40; /* brown logo color */
+    text-decoration: none; /* remove underline */
+    letter-spacing: 0.5px; /* slightly spread letters */
+    /* padding: 0px 5px; */
+}
+.logo-star {
+    display: inline;
+    font-size: 22px;
+}
+
+.logo-flower {
+    display: none;
+}
+
+.nav-links {
+    display: flex; /* navigation links appear in a row */
+    align-items: center; /* vertically align links */
+    gap: clamp(10px, 5vw, 55px); /* min, viewport-width, max */
+}
+
+.nav-links a {
+    color: #6d6057; /* normal nav link color */
+    text-decoration: none; /* remove underline */
+    font-size: 13px; /* small nav text */
+    letter-spacing: 0.5px; /* add small space between letters */
+    padding-bottom: 0px; /* leave room for active underline */
+    transition: 0.4s; /* smooth hover color change */
+}
+
+.style-toggle {
+    margin-left: auto;
+    padding: 9px 16px;
+    background-color: #e8ddd2;
+    color: #765a49;
+    border: 1px solid #d5c3b4;
+    border-radius: 25px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 11px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.nav-links a:hover {
+    color: #9a735c; /* lighter brown when hovering */
+}
+
+.nav-links .active {
+    color: #805f4b; /* darker color for current page */
+    border-bottom: 1px solid #805f4b; /* underline current page */
+}
+
+/* landing */
+.landing-page {
+    position: relative; /* used for positioning background decorations */
+    overflow: hidden; /* hide shapes that go outside the page */
+}
+
+.hero {
+    width: 82%; /* main hero width */
+    max-width: 1050px; /* stop hero from getting too wide */
+    min-height: 500px; /* keep enough height for intro section */
+    margin: 0 auto; /* center hero */
+    display: grid; /* split hero into columns */
+    grid-template-columns: 1.1fr 0.9fr; /* text side is slightly wider than photo side */
+    align-items: center; /* vertically center both columns */
+    gap: 80px; /* space between text and photo */
+    position: relative; /* lets z-index work */
+    z-index: 2; /* keep hero above background shapes */
+}
+
+.hero-text {
+    padding: 10px 0; /* small vertical spacing */
+}
+
+.eyebrow {
+    margin: 0 0 8px; /* space below label */
+    padding-top: 5px; /* small space above */
+    color: #a17d67; /* muted brown */
+    font-size: 11px; /* small label text */
+    font-weight: bold; /* make it stand out */
+    letter-spacing: 2px; /* spread letters for editorial look */
+    text-transform: uppercase; /* make label all caps */
+}
+
+h1 {
+    margin: 0; /* remove default heading margin */
+    font-family: Georgia, "Times New Roman", serif; /* serif heading font */
+    font-size: 44px; /* main heading size */
+    line-height: 0.98; /* keep lines close together */
+    font-weight: normal; /* softer heading weight */
+    color: #4f4138; /* dark brown heading color */
+}
+
+h1 span {
+    color: #9a7058; /* accent color for name */
+    font-style: italic; /* make name more decorative */
+    font-size: 55px; /* make name larger than rest of heading */
+}
+
+.tagline {
+    margin: 18px 0 14px; /* spacing above and below tagline */
+    font-family: Georgia, "Times New Roman", serif; /* serif font for personality */
+    font-size: 21px; /* tagline size */
+    font-style: italic; /* softer editorial style */
+    color: #846b5c; /* muted brown */
+}
+
+.description {
+    max-width: 570px; /* keep paragraph easy to read */
+    margin: 0 0 24px; /* space below paragraph */
+    font-size: 12px; /* paragraph text size */
+    line-height: 1.7; /* spacing between lines */
+    color: #625850; /* normal paragraph color */
+}
+
+.description a {
+    color: #8b6049; /* link color */
+    font-weight: bold; /* make link stand out */
+    text-decoration: none; /* remove normal underline */
+    border-bottom: 1px solid #c7a995; /* custom underline */
+}
+
+.description a:hover {
+    color: #604538; /* darker link when hovering */
+}
+
+/* navigating buttons */
+.hero-buttons {
+    display: flex; /* place buttons side by side */
+    align-items: center; /* vertically align buttons */
+    gap: 27px; /* space between buttons */
+}
+
+.primary-button {
+    display: inline-block; /* let padding work nicely */
+    padding: 14px 25px; /* space inside button */
+    background-color: #8c6a55; /* main brown button color */
+    color: #fffaf5; /* light button text */
+    text-decoration: none; /* remove link underline */
+    border-radius: 30px; /* rounded pill shape */
+    font-size: 13px; /* button text size */
+    letter-spacing: 0.3px; /* slight letter spacing */
+    transition: 0.25s; /* smooth hover effect */
+}
+
+.primary-button:hover {
+    background-color: #705342; /* darker brown when hovering */
+    transform: translateY(-2px); /* move button slightly upward */
+}
+
+.secondary-button {
+    color: #755a4a; /* secondary button text color */
+    font-family: Georgia, "Times New Roman", serif; /* serif style */
+    font-size: 14px; /* button text size */
+    text-decoration: none; /* remove normal underline */
+    border-bottom: 1px solid #bca18f; /* custom underline */
+    padding-bottom: 3px; /* spacing above underline */
+    transition: 0.2s; /* smooth hover */
+}
+
+.secondary-button:hover {
+    color: #9a7058; /* lighter accent on hover */
+}
+
+/* all these for the photo part */
+
+.hero-photo {
+    display: flex; /* use flex to center the photo */
+    justify-content: center; /* horizontally center */
+    align-items: center; /* vertically center */
+    min-height: 500px; /* give enough vertical space */
+}
+
+.photo-wrapper {
+    position: relative; /* lets decorations be positioned around photo */
+    width: 300px; /* photo area width */
+    height: 410px; /* photo area height */
+}
+
+.photo-frame {
+    width: 300px; /* frame width */
+    height: 410px; /* frame height */
+    padding: 10px; /* create visible frame around image */
+    background-color: #dfcdbd; /* beige frame color */
+    border-radius: 170px 170px 25px 25px; /* rounded arch shape */
+    box-shadow: 0 20px 45px rgba(87, 67, 54, 0.16); /* soft shadow behind photo */
+    position: relative; /* lets z-index work */
+    z-index: 3; /* place frame above outline */
+}
+
+.photo {
+    width: 100%; /* fill frame width */
+    height: 100%; /* fill frame height */
+    object-fit: cover; /* crop image without stretching */
+    border-radius: 160px 160px 18px 18px; /* match arch shape */
+    display: block; /* remove small image spacing */
+}
+
+.arch-outline {
+    position: absolute; /* position behind photo */
+    width: 300px; /* same width as photo */
+    height: 410px; /* same height as photo */
+    top: -18px; /* move outline upward */
+    left: 18px; /* move outline to the right */
+    border: 2px solid #b69882; /* decorative border */
+    border-radius: 170px 170px 25px 25px; /* same arch shape */
+    z-index: 1; /* keep behind photo */
+}
+
+.photo-note {
+    position: absolute; /* place note over the photo area */
+    right: -25px; /* move note partly outside photo */
+    bottom: 20px; /* position near bottom */
+    background-color: #fffaf4; /* light card background */
+    padding: 11px 18px; /* space inside note */
+    border: 1px solid #e4d7ca; /* light border */
+    border-radius: 25px; /* rounded label */
+    box-shadow: 0 10px 25px rgba(82, 63, 50, 0.12); /* soft shadow */
+    font-family: Georgia, "Times New Roman", serif; /* serif label font */
+    font-size: 13px; /* label text size */
+    color: #765a49; /* brown text */
+    z-index: 4; /* place note above photo */
+    transform: rotate(-3deg); /* tilt note slightly */
+    white-space: nowrap; /* keep text on one line */
+}
+
+.photo-note span {
+    margin-right: 5px; /* space after icon if used */
+    color: #a87d64; /* icon accent color */
+}
+
+.little-star {
+    position: absolute; /* position decorative stars around photo */
+    color: #a88369; /* star color */
+    font-family: Georgia, serif; /* star font */
+    z-index: 4; /* place stars above photo */
+}
+
+.star-one {
+    top: 35px; /* move first star down from top */
+    right: -15px; /* move first star outside right edge */
+    font-size: 23px; /* larger star */
+}
+
+.star-two {
+    left: -15px; /* move second star outside left edge */
+    bottom: 75px; /* move star up from bottom */
+    font-size: 16px; /* smaller star */
+}
+
+/* the more decorative the better :) */
+
+.shape {
+    position: absolute; /* freely place shapes around page */
+    border-radius: 50%; /* make shapes circular */
+    z-index: 0; /* keep them behind content */
+}
+
+.shape-one {
+    width: 350px; /* first circle width */
+    height: 350px; /* first circle height */
+    background-color: #eaded2; /* light beige */
+    top: -150px; /* move partly outside top */
+    right: -100px; /* move partly outside right side */
+}
+
+.shape-two {
+    width: 180px; /* second circle width */
+    height: 180px; /* second circle height */
+    background-color: #d8c3b0; /* darker beige */
+    bottom: 160px; /* move up from bottom */
+    left: -90px; /* move partly outside left side */
+    opacity: 0.55; /* make it more subtle */
+}
+
+.shape-three {
+    width: 90px; /* third circle width */
+    height: 90px; /* third circle height */
+    border: 1px solid #bfa38e; /* outline instead of filled circle */
+    top: 165px; /* place lower on page */
+    left: 48%; /* move close to center */
+    opacity: 0.5; /* make outline subtle */
+}
+
+/* some layout for the contact section, i might adjust */
+.contact-section {
+    width: 86%; /* section width */
+    max-width: 1200px; /* limit maximum width */
+    margin: 0 auto 10px; /* center and leave small space below */
+    padding: 10px 20px 20px; /* inside spacing */
+    text-align: center; /* center all contact content */
+}
+
+.contact-label {
+    margin: 0 0 10px; /* spacing under small label */
+    color: #a17d67; /* muted brown */
+    font-size: 10px; /* small label size */
+    font-weight: bold; /* make label stand out */
+    letter-spacing: 2px; /* spread letters */
+}
+
+.contact-section h2 {
+    margin: 0 0 12px; /* space below heading */
+    font-family: Georgia, "Times New Roman", serif; /* serif heading */
+    font-size: 32px; /* heading size */
+    font-weight: normal; /* softer heading */
+    color: #654f41; /* dark brown */
+}
+
+.contact-description {
+    margin: 0 auto 28px; /* center and add space below */
+    color: #746960; /* softer text color */
+    font-size: 12px; /* description size */
+}
+
+.contact-links {
+    display: flex; /* put contact links in one row */
+    justify-content: center; /* center the group */
+    gap: 30px; /* space between each contact link */
+}
+
+.contact-link {
+    display: flex; /* use flex for icon + text */
+    flex-direction: column; /* stack icon above text */
+    align-items: center; /* center icon and text */
+    gap: 9px; /* space between icon and text */
+    color: #765a49; /* default link color */
+    font-size: 11px; /* link text size */
+    text-decoration: none; /* remove underline */
+    transition: 0.25s; /* smooth hover */
+}
+
+.contact-link i {
+    width: 48px; /* icon circle width */
+    height: 48px; /* icon circle height */
+    display: flex; /* center icon */
+    align-items: center; /* vertically center icon */
+    justify-content: center; /* horizontally center icon */
+    background-color: #e8ddd2; /* beige icon background */
+    border: 1px solid #d5c3b4; /* light border */
+    border-radius: 50%; /* make icon background circular */
+    font-size: 19px; /* icon size */
+    color: #765a49; /* icon color */
+    transition: 0.25s; /* smooth hover */
+}
+
+.contact-link:hover {
+    color: #9a7058; /* change text color on hover */
+    transform: translateY(-3px); /* lift contact link slightly */
+}
+
+.contact-link:hover i {
+    background-color: #8c6a55; /* darken icon background */
+    color: #fffaf5; /* make icon light */
+}
+
+/* quick intro at the bottom */
+.quick-intro {
+    width: 86%; /* section width */
+    max-width: 1200px; /* limit maximum width */
+    margin: 0 auto 20px; /* center and leave space below */
+    padding: 20px 0; /* vertical spacing */
+    border-top: 1px solid #d9cabe; /* top divider */
+    border-bottom: 1px solid #d9cabe; /* bottom divider */
+    display: grid; /* use grid for the three items */
+    grid-template-columns: repeat(3, 1fr); /* make 3 equal columns */
+    gap: 55px; /* space between columns */
+    position: relative; /* lets z-index work */
+    z-index: 2; /* keep above background shapes */
+}
+
+.intro-item {
+    display: flex; /* put number next to text */
+    gap: 16px; /* space between number and text */
+}
+
+.number {
+    color: #aa8a75; /* number accent color */
+    font-family: Georgia, serif; /* serif number */
+    font-size: 12px; /* number size */
+    font-style: italic; /* decorative number style */
+    padding-top: 5px; /* line number up with heading */
+}
+
+.intro-item h2 {
+    margin: 0 0 8px; /* space below heading */
+    color: #654f41; /* dark brown heading */
+    font-family: Georgia, "Times New Roman", serif; /* serif heading */
+    font-size: 18px; /* heading size */
+    font-weight: normal; /* lighter heading weight */
+}
+
+.intro-item p {
+    margin: 0; /* remove default paragraph margin */
+    color: #746960; /* paragraph text color */
+    font-size: 12px; /* paragraph size */
+    line-height: 1.7; /* improve readability */
+}
+
+/* footer */
+footer {
+    padding: 20px; /* space inside footer */
+    text-align: center; /* center footer text */
+    background-color: #e8ddd2; /* beige footer background */
+    color: #827064; /* footer text color */
+    font-family: Georgia, "Times New Roman", serif; /* serif footer text */
+    font-size: 12px; /* footer text size */
+}
+
+/* smaller screens when we resize window??? width = 900px */
+@media (max-width: 900px) {
+    .navbar {
+        height: auto; /* allow navbar to grow if links wrap */
+        padding: 18px 15%; /* smaller screen spacing */
+        flex-direction: column; /* stack nav content */
+        gap: 14px; /* space between stacked items */
+    }
+
+    .nav-links {
+        gap: 18px; /* reduce link spacing */
+        justify-content: center; /* center navigation */
+        flex-wrap: wrap; /* allow links to move onto another row */
+    }
+
+    .hero {
+        width: 88%; /* use more screen width */
+        display: grid; /* keep grid layout */
+        grid-template-columns: 1fr; /* change from 2 columns to 1 */
+        gap: 0; /* remove column gap */
+        min-height: auto; /* let content decide height */
+        padding: 50px 0 60px; /* vertical spacing */
+    }
+
+    .hero-text {
+        display: contents; /* let hero text children act like direct grid items */
+    }
+
+    .eyebrow {
+        order: 1; /* show label first */
+        text-align: center; /* center label */
+        margin-bottom: 12px; /* space below */
+    }
+
+    h1 {
+        order: 2; /* show heading second */
+        text-align: center; /* center heading */
+        margin: 0 0 45px; /* space below heading */
+        font-size: 40px; /* slightly smaller heading */
+        line-height: 1; /* normal line spacing */
+    }
+
+    h1 span {
+        font-size: 49px; /* slightly smaller name text */
+    }
+
+    .hero-photo {
+        order: 3; /* show photo after heading */
+        min-height: auto; /* remove fixed photo height */
+        margin-bottom: 45px; /* space under photo */
+    }
+
+    .tagline {
+        order: 4; /* show tagline after photo */
+        text-align: center; /* center tagline */
+        margin: 0 0 18px; /* space below */
+        font-size: 19px; /* slightly smaller tagline */
+    }
+
+    .description {
+        order: 5; /* show description after tagline */
+        max-width: 520px; /* keep paragraph readable */
+        margin: 0 auto 28px; /* center paragraph and add space below */
+        text-align: center; /* center description */
+    }
+
+    .hero-buttons {
+        order: 6; /* buttons come last */
+        justify-content: center; /* center buttons */
+        flex-wrap: wrap; /* allow buttons to wrap if needed */
+        gap: 18px; /* smaller gap */
+    }
+
+    .quick-intro {
+        width: 84%; /* slightly narrower */
+        grid-template-columns: 1fr; /* stack intro items vertically */
+        gap: 30px; /* space between intro items */
+        margin-bottom: 50px; /* more bottom space */
+    }
+}
+
+/* Portfolio */
+
+.project-card {
+    padding: 38px 0; /* vertical spacing inside project */
+    border-top: 1px solid #d9cabe; /* top divider */
+    border-bottom: 1px solid #d9cabe; /* bottom divider */
+    display: grid; /* use grid for project number + info */
+    grid-template-columns: 70px 1fr; /* small number column and large content column */
+    gap: 35px; /* space between number and project info */
+}
+
+.project-number {
+    color: #aa8a75; /* muted accent color */
+    font-family: Georgia, "Times New Roman", serif; /* serif number */
+    font-size: 14px; /* number size */
+    font-style: italic; /* decorative number */
+    padding-top: 8px; /* line it up with heading */
+}
+
+.project-info {
+    max-width: 850px; /* limit project content width */
+}
+
+.project-heading {
+    display: flex; /* put title and date on same row */
+    justify-content: space-between; /* push date to the right */
+    align-items: flex-start; /* align items at top */
+    gap: 30px; /* space between title and date */
+    margin-bottom: 20px; /* space under heading */
+}
+
+.project-type {
+    margin: 0 0 7px; /* space below small label */
+    color: #a17d67; /* muted accent color */
+    font-size: 10px; /* small label size */
+    font-weight: bold; /* make label stand out */
+    letter-spacing: 2px; /* spread letters */
+}
+
+.project-heading h2 {
+    margin: 0; /* remove default heading margin */
+    color: #654f41; /* dark brown */
+    font-family: Georgia, "Times New Roman", serif; /* serif heading */
+    font-size: 25px; /* project title size */
+    font-weight: normal; /* softer heading weight */
+}
+
+.project-date {
+    margin: 7px 0 0; /* line date up with title */
+    color: #927b6d; /* lighter brown */
+    font-family: Georgia, "Times New Roman", serif; /* serif date */
+    font-size: 12px; /* date size */
+    font-style: italic; /* date styling */
+    white-space: nowrap; /* keep date on one line */
+}
+
+.project-description {
+    max-width: 700px; /* keep project paragraph readable */
+    margin: 0 0 12px; /* space between paragraphs */
+    color: #625850; /* paragraph color */
+    font-size: 12px; /* paragraph size */
+    line-height: 1.8; /* line spacing */
+}
+
+.project-tags {
+    display: flex; /* tags appear in a row */
+    flex-wrap: wrap; /* move tags to another row if needed */
+    gap: 8px; /* space between tags */
+    margin-top: 22px; /* space above tags */
+}
+
+.project-tags span {
+    padding: 7px 13px; /* space inside each tag */
+    background-color: #e8ddd2; /* beige tag background */
+    border: 1px solid #d5c3b4; /* tag border */
+    border-radius: 20px; /* rounded pill shape */
+    color: #765a49; /* tag text color */
+    font-size: 10px; /* tag text size */
+    letter-spacing: 0.3px; /* slight letter spacing */
+}
+
+@media (max-width: 700px) {
+    .project-card {
+        grid-template-columns: 1fr; /* stack number and project info */
+        gap: 12px; /* reduce spacing */
+    }
+
+    .project-heading {
+        flex-direction: column; /* stack title and date */
+        gap: 5px; /* smaller spacing */
+    }
+
+    .project-date {
+        margin-top: 0; /* remove extra space */
+    }
+}
+
+/* Resume & Skills */
+
+.resume-section {
+    padding: 38px 0; /* vertical spacing around resume */
+    border-top: 1px solid #d9cabe; /* divider above resume */
+}
+
+.section-heading {
+    margin-bottom: 25px; /* space under section heading */
+}
+
+.section-heading h2 {
+    margin: 0; /* remove default heading margin */
+    color: #654f41; /* heading color */
+    font-family: Georgia, "Times New Roman", serif; /* serif heading */
+    font-size: 25px; /* section heading size */
+    font-weight: normal; /* softer weight */
+}
+
+.resume-frame {
+    width: 90%; /* resume takes 90 percent of content width */
+    height: 600px; /* fixed PDF viewer height */
+    padding: 10px; /* frame around PDF */
+    background-color: #e8ddd2; /* beige border area */
+    border: 1px solid #d5c3b4; /* outer border */
+    border-radius: 8px; /* slightly rounded corners */
+    box-shadow: 0 15px 35px rgba(87, 67, 54, 0.1); /* soft shadow */
+}
+
+.resume-frame iframe {
+    width: 100%; /* PDF fills frame width */
+    height: 100%; /* PDF fills frame height */
+    border: none; /* remove iframe default border */
+    background-color: white; /* white background behind PDF */
+}
+
+.resume-link {
+    display: inline-block; /* let spacing and border work properly */
+    margin-top: 18px; /* space above link */
+    color: #755a4a; /* link color */
+    font-family: Georgia, "Times New Roman", serif; /* serif link */
+    font-size: 13px; /* link size */
+    text-decoration: none; /* remove normal underline */
+    border-bottom: 1px solid #bca18f; /* custom underline */
+    padding-bottom: 3px; /* space above underline */
+}
+
+.resume-link:hover {
+    color: #9a7058; /* lighter accent on hover */
+}
+
+@media (max-width: 700px) {
+    .resume-frame {
+        height: 400px; /* keep PDF viewer tall on smaller screens */
+    }
+}
+
+/* Activities */
+
+.activity-card {
+    padding: 38px 0; /* vertical spacing inside activity */
+    border-top: 1px solid #d9cabe; /* top divider */
+    border-bottom: 1px solid #d9cabe; /* bottom divider */
+    display: grid; /* use grid for number and activity info */
+    grid-template-columns: 70px 1fr; /* small number column and large content column */
+    gap: 35px; /* space between columns */
+}
+
+.activity-number {
+    color: #aa8a75; /* accent color for number */
+    font-family: Georgia, "Times New Roman", serif; /* serif number */
+    font-size: 14px; /* number size */
+    font-style: italic; /* decorative number style */
+    padding-top: 8px; /* align number with heading */
+}
+
+.activity-info {
+    max-width: 850px; /* limit activity content width */
+}
+
+.activity-heading {
+    display: flex; /* put heading and date on same row */
+    justify-content: space-between; /* push date to right side */
+    align-items: flex-start; /* align both at top */
+    gap: 30px; /* space between heading and date */
+    margin-bottom: 20px; /* space below heading */
+}
+
+.activity-type {
+    margin: 0 0 7px; /* space below category label */
+    color: #a17d67; /* muted accent color */
+    font-size: 10px; /* small label */
+    font-weight: bold; /* emphasize label */
+    letter-spacing: 2px; /* spread letters */
+}
+
+.activity-heading h2 {
+    margin: 0; /* remove default heading margin */
+    color: #654f41; /* dark brown */
+    font-family: Georgia, "Times New Roman", serif; /* serif heading */
+    font-size: 25px; /* activity title size */
+    font-weight: normal; /* softer heading weight */
+}
+
+.activity-role {
+    margin: 6px 0 0; /* small space above role */
+    color: #846b5c; /* muted brown */
+    font-family: Georgia, "Times New Roman", serif; /* serif role text */
+    font-size: 14px; /* role text size */
+    font-style: italic; /* make role look separate from title */
+}
+
+.activity-date {
+    margin: 7px 0 0; /* line date up with heading */
+    color: #927b6d; /* lighter brown */
+    font-family: Georgia, "Times New Roman", serif; /* serif date */
+    font-size: 12px; /* date size */
+    font-style: italic; /* date styling */
+    white-space: nowrap; /* keep date in one line */
+}
+
+.activity-description {
+    max-width: 700px; /* keep text readable */
+    margin: 0 0 12px; /* space between paragraphs */
+    color: #625850; /* paragraph text color */
+    font-size: 12px; /* paragraph size */
+    line-height: 1.8; /* space between lines */
+}
+
+.soft-skills {
+    display: flex; /* display skills in a row */
+    flex-wrap: wrap; /* let skills move to another line if needed */
+    gap: 8px; /* space between skill tags */
+    margin-top: 22px; /* space above skills */
+}
+
+.soft-skills span {
+    padding: 7px 13px; /* space inside skill tag */
+    background-color: #e8ddd2; /* beige skill background */
+    border: 1px solid #d5c3b4; /* skill border */
+    border-radius: 20px; /* rounded pill shape */
+    color: #765a49; /* skill text color */
+    font-size: 10px; /* skill text size */
+    letter-spacing: 0.3px; /* slight letter spacing */
+}
+
+@media (max-width: 700px) {
+    .activity-card {
+        grid-template-columns: 1fr; /* stack number and activity info */
+        gap: 12px; /* reduce gap */
+    }
+
+    .activity-heading {
+        flex-direction: column; /* stack title and date */
+        gap: 5px; /* smaller spacing */
+    }
+
+    .activity-date {
+        margin-top: 0; /* remove extra margin */
+    }
+}
+
+/* floating style toggle button */
+.style-toggle {
+    position: fixed;
+    right: 20px;
+    top: 80%;
+    transform: translateY(calc(-50% + var(--scroll-move, 0px)));
+    z-index: 1000;
+
+    transition: transform 0.3s ease;
+
+    width: 44px;
+    height: 44px;
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #e8ddd2;
+    color: #765a49;
+
+    border: 1px solid #d5c3b4;
+    border-radius: 50%;
+
+    font-family: Georgia, "Times New Roman", serif;
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+/* half-circle icon */
+.toggle-icon {
+    margin: 0;
+    font-size: 23px;
+    color: #8c6a55;
+}
+
+/* hidden "Switch Style" label */
+.toggle-label {
+    position: absolute;
+    right: 50px;
+
+    background-color: #765a49;
+    color: #fffaf5;
+
+    padding: 7px 11px;
+    border-radius: 15px;
+
+    font-size: 11px;
+    font-style: italic;
+    white-space: nowrap;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.2s;
+}
+
+/* show label when hovering */
+.style-toggle:hover .toggle-label {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* subtle button movement */
+.style-toggle:hover {
+    background-color: #8c6a55;
+    transform: translateY(-50%) scale(1.08);
+}
+
+.style-toggle:hover .toggle-icon {
+    color: #fffaf5;
+}
+
+@media (max-width: 500px) {
+    .navbar {
+        padding: 16px 4%; /* reduce navbar spacing more on phones */
+    }
+
+    .nav-links {
+        gap: 19px 25px; /* smaller spacing between links */
+    }
+
+    .nav-links a {
+        font-size: 11px; /* smaller nav text */
+    }
+
+    .hero {
+        width: 90%; /* use more phone screen width */
+        padding-top: 40px; /* add space above hero */
+    }
+
+    h1 {
+        font-size: 34px; /* make heading smaller */
+        margin-bottom: 35px; /* space below heading */
+    }
+
+    h1 span {
+        font-size: 43px; /* make name smaller */
+    }
+
+    .photo-wrapper,
+    .photo-frame {
+        width: 260px; /* smaller photo width */
+        height: 355px; /* smaller photo height */
+    }
+
+    .arch-outline {
+        width: 260px; /* match smaller photo width */
+        height: 355px; /* match smaller photo height */
+        top: -15px; /* adjust outline position */
+        left: 15px; /* adjust outline position */
+    }
+
+    .photo-note {
+        right: -15px; /* move note slightly inward */
+        bottom: 18px; /* position note near bottom */
+        padding: 10px 15px; /* smaller padding */
+        font-size: 12px; /* smaller note text */
+    }
+
+    .tagline {
+        font-size: 18px; /* smaller tagline */
+    }
+
+    .contact-links {
+        gap: 18px; /* smaller spacing */
+        flex-wrap: wrap; /* allow contact icons to wrap */
+    }
+
+    .contact-link i {
+        width: 44px; /* smaller icon circle */
+        height: 44px; /* smaller icon circle */
+    }
+
+    .description {
+        font-size: 12px; /* keep readable paragraph size */
+    }
+
+    .hero-buttons {
+        flex-direction: column; /* stack buttons vertically */
+    }
+}
