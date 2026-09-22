@@ -100,18 +100,7 @@ body {
     transition: 0.4s; /* smooth hover color change */
 }
 
-/* .style-toggle {
-    margin-left: auto;
-    padding: 9px 16px;
-    background-color: #e8ddd2;
-    color: #765a49;
-    border: 1px solid #d5c3b4;
-    border-radius: 25px;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 11px;
-    cursor: pointer;
-    transition: 0.25s;
-} */
+
 
 .nav-links a:hover {
     color: #9a735c; /* lighter brown when hovering */
@@ -658,62 +647,6 @@ footer {
     }
 }
 
-/* Resume & Skills */
-
-.resume-section {
-    padding: 38px 0; /* vertical spacing around resume */
-    border-top: 1px solid #d9cabe; /* divider above resume */
-}
-
-.section-heading {
-    margin-bottom: 25px; /* space under section heading */
-}
-
-.section-heading h2 {
-    margin: 0; /* remove default heading margin */
-    color: #654f41; /* heading color */
-    font-family: Georgia, "Times New Roman", serif; /* serif heading */
-    font-size: 25px; /* section heading size */
-    font-weight: normal; /* softer weight */
-}
-
-.resume-frame {
-    width: 90%; /* resume takes 90 percent of content width */
-    height: 600px; /* fixed PDF viewer height */
-    padding: 10px; /* frame around PDF */
-    background-color: #e8ddd2; /* beige border area */
-    border: 1px solid #d5c3b4; /* outer border */
-    border-radius: 8px; /* slightly rounded corners */
-    box-shadow: 0 15px 35px rgba(87, 67, 54, 0.1); /* soft shadow */
-}
-
-.resume-frame iframe {
-    width: 100%; /* PDF fills frame width */
-    height: 100%; /* PDF fills frame height */
-    border: none; /* remove iframe default border */
-    background-color: white; /* white background behind PDF */
-}
-
-.resume-link {
-    display: inline-block; /* let spacing and border work properly */
-    margin-top: 18px; /* space above link */
-    color: #755a4a; /* link color */
-    font-family: Georgia, "Times New Roman", serif; /* serif link */
-    font-size: 13px; /* link size */
-    text-decoration: none; /* remove normal underline */
-    border-bottom: 1px solid #bca18f; /* custom underline */
-    padding-bottom: 3px; /* space above underline */
-}
-
-.resume-link:hover {
-    color: #9a7058; /* lighter accent on hover */
-}
-
-@media (max-width: 700px) {
-    .resume-frame {
-        height: 400px; /* keep PDF viewer tall on smaller screens */
-    }
-}
 
 /* Activities */
 
@@ -819,79 +752,58 @@ footer {
         margin-top: 0; /* remove extra margin */
     }
 }
+/* theme toggle */
 
-/* floating style toggle button */
 .style-toggle {
     position: fixed;
-    right: 20px;
+    right: 22px;
     top: 80%;
-    transform: translateY(calc(-50% + var(--scroll-move, 0px)));
     z-index: 1000;
-
-    transition: transform 0.3s ease;
-
-    width: 44px;
-    height: 44px;
-    padding: 0;
+    pointer-events: auto;
+    padding: 10px 10px;
 
     display: flex;
     align-items: center;
-    justify-content: center;
+    gap: 4px;
 
     background-color: #e8ddd2;
     color: #765a49;
 
     border: 1px solid #d5c3b4;
-    border-radius: 50%;
+    border-radius: 999px;
 
+    /* font-family: Arial, Helvetica, sans-serif; */
     font-family: Georgia, "Times New Roman", serif;
+    font-size: 10px;
+    letter-spacing: 1.3px;
+
     cursor: pointer;
+    pointer-events: auto;
+
+    box-shadow: 0 5px 15px rgba(60, 45, 35, 0.12);
+
+    transform:
+        translateY(
+            calc(-50% + var(--scroll-move, 0px))
+        );
 
     transition: 0.25s;
 }
 
-/* half-circle icon */
 .toggle-icon {
-    margin: 0;
-    font-size: 23px;
-    color: #8c6a55;
+    font-size: 15px;
+    line-height: 1;
 }
 
-/* hidden "Switch Style" label */
-.toggle-label {
-    position: absolute;
-    right: 50px;
-
-    background-color: #765a49;
-    color: #fffaf5;
-
-    padding: 7px 11px;
-    border-radius: 15px;
-
-    font-size: 11px;
-    font-style: italic;
-    white-space: nowrap;
-
-    opacity: 0;
-    visibility: hidden;
-
-    transition: 0.2s;
-}
-
-/* show label when hovering */
-.style-toggle:hover .toggle-label {
-    opacity: 1;
-    visibility: visible;
-}
-
-/* subtle button movement */
 .style-toggle:hover {
     background-color: #8c6a55;
-    transform: translateY(-50%) scale(1.08);
-}
-
-.style-toggle:hover .toggle-icon {
     color: #fffaf5;
+
+    transform:
+        translateY(
+            calc(-50% + var(--scroll-move, 0px))
+        )
+        scale(1.04);
 }
 
 @media (max-width: 500px) {
@@ -961,5 +873,516 @@ footer {
 
     .hero-buttons {
         flex-direction: column; /* stack buttons vertically */
+    }
+}
+
+.project-demo {
+    margin: 6px 0 18px;
+    font-size: 0.95rem;
+}
+
+.project-demo strong {
+    font-weight: 700;
+}
+
+.project-demo a {
+    color: inherit;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    transition: opacity 0.2s ease;
+}
+
+.project-demo a:hover {
+    opacity: 0.6;
+}
+
+/* =========================================
+   QUALIFICATIONS PAGE
+   ========================================= */
+
+.qualifications-content {
+    display: flex;
+    flex-direction: column;
+    gap: 85px;
+}
+
+
+/* section headings */
+
+.qualification-section {
+    width: 100%;
+}
+
+.qualification-section .section-heading {
+    margin-bottom: 28px;
+}
+
+.qualification-section .section-heading h2 {
+    margin: 5px 0 10px;
+
+    color: #4f4037;
+    font-size: 2rem;
+}
+
+.section-description {
+    max-width: 620px;
+    margin: 0;
+
+    color: #78675c;
+
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   RESUME CARD
+   ========================================= */
+
+.resume-card {
+    padding: 24px;
+
+    background: #fffaf5;
+
+    border: 1px solid #dfd1c5;
+    border-radius: 24px;
+
+    box-shadow:
+        0 10px 30px
+        rgba(70, 50, 40, 0.08);
+}
+
+.resume-frame {
+    width: 100%;
+    height: 720px;
+
+    overflow: hidden;
+
+    background: white;
+
+    border: 1px solid #e2d7ce;
+    border-radius: 16px;
+}
+
+.resume-frame iframe {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    border: none;
+}
+
+.resume-link {
+    display: inline-block;
+
+    margin-top: 18px;
+
+    color: #765a49;
+
+    font-size: 0.9rem;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+}
+
+.resume-link:hover {
+    opacity: 0.65;
+
+    transform: translateX(3px);
+}
+
+
+/* =========================================
+   CARD GRIDS
+   ========================================= */
+
+.skills-grid,
+.interests-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 22px;
+}
+
+
+/* =========================================
+   TECHNICAL SKILL CARDS
+   ========================================= */
+
+.skill-card {
+    min-height: 280px;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 28px;
+
+    background: #f8f1ea;
+
+    border: 1px solid #ddcfc2;
+    border-radius: 22px;
+
+    box-shadow:
+        0 8px 24px
+        rgba(70, 50, 40, 0.07);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 14px 32px
+        rgba(70, 50, 40, 0.12);
+}
+
+
+/* icon + number at top */
+
+.skill-card-top,
+.interest-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 25px;
+}
+
+.skill-icon,
+.interest-icon {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #eadcd0;
+    color: #806451;
+
+    border-radius: 50%;
+
+    font-size: 1.1rem;
+}
+
+.card-number {
+    margin: 0;
+
+    color: #ad9483;
+
+    font-size: 0.72rem;
+    font-weight: 700;
+
+    letter-spacing: 0.12em;
+}
+
+
+/* card text */
+
+.skill-card h3,
+.interest-card h3 {
+    margin: 0 0 12px;
+
+    color: #55443a;
+
+    font-size: 1.25rem;
+    line-height: 1.25;
+}
+
+.skill-description {
+    margin: 0 0 24px;
+
+    color: #7b685d;
+
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+
+/* technology pills */
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-top: auto;
+}
+
+.skill-tags span {
+    padding: 7px 11px;
+
+    background: #eee1d6;
+    color: #6c5547;
+
+    border: 1px solid #e1d0c3;
+    border-radius: 999px;
+
+    font-size: 0.78rem;
+    font-weight: 600;
+}
+
+
+/* =========================================
+   AREAS OF INTEREST CARDS
+   ========================================= */
+
+.interest-card {
+    min-height: 300px;
+
+    padding: 28px;
+
+    background: #fffaf5;
+
+    border: 1px solid #ddcfc2;
+    border-radius: 22px;
+
+    box-shadow:
+        0 8px 24px
+        rgba(70, 50, 40, 0.07);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.interest-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 14px 32px
+        rgba(70, 50, 40, 0.12);
+}
+
+.interest-card > p:last-child {
+    margin: 0;
+
+    color: #756359;
+
+    font-size: 0.92rem;
+    line-height: 1.7;
+}
+
+
+/* make the cards a little less identical */
+
+.skill-card:nth-child(2),
+.interest-card:nth-child(2) {
+    background: #f3e9e0;
+}
+
+.skill-card:nth-child(3),
+.interest-card:nth-child(3) {
+    background: #faf5ef;
+}
+
+
+/* =========================================
+   QUALIFICATIONS RESPONSIVE
+   ========================================= */
+
+@media (max-width: 900px) {
+
+    .qualifications-content {
+        gap: 65px;
+    }
+
+    .skills-grid,
+    .interests-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skill-card,
+    .interest-card {
+        min-height: auto;
+    }
+
+    .resume-frame {
+        height: 620px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .qualifications-content {
+        gap: 55px;
+    }
+
+    .qualification-section .section-heading h2 {
+        font-size: 1.65rem;
+    }
+
+    .resume-card {
+        padding: 14px;
+
+        border-radius: 18px;
+    }
+
+    .resume-frame {
+        height: 500px;
+
+        border-radius: 12px;
+    }
+
+    .skill-card,
+    .interest-card {
+        padding: 22px;
+
+        border-radius: 18px;
+    }
+}
+/* =========================================
+   CERTIFICATIONS
+   ========================================= */
+
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.certification-card {
+    min-height: 270px;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 28px;
+
+    background: #fffaf5;
+
+    border: 1px solid #ddcfc2;
+    border-radius: 22px;
+
+    box-shadow:
+        0 8px 24px
+        rgba(70, 50, 40, 0.07);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.certification-card:nth-child(2) {
+    background: #f3e9e0;
+}
+
+.certification-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 14px 32px
+        rgba(70, 50, 40, 0.12);
+}
+
+
+/* icon + number */
+
+.certification-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 22px;
+}
+
+.certification-icon {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #eadcd0;
+    color: #806451;
+
+    border-radius: 50%;
+
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+
+/* text */
+
+.certification-type {
+    margin: 0 0 7px;
+
+    color: #a18472;
+
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+}
+
+.certification-card h3 {
+    margin: 0 0 12px;
+
+    color: #55443a;
+
+    font-size: 1.35rem;
+}
+
+.certification-description {
+    margin: 0 0 25px;
+
+    color: #756359;
+
+    font-size: 0.9rem;
+    line-height: 1.65;
+}
+
+
+/* credential link */
+
+.certification-link {
+    display: inline-block;
+
+    width: fit-content;
+
+    margin-top: auto;
+
+    color: #765a49;
+
+    font-size: 0.85rem;
+    font-weight: 700;
+
+    text-decoration: underline;
+    text-underline-offset: 4px;
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+}
+
+.certification-link:hover {
+    opacity: 0.6;
+
+    transform: translateX(3px);
+}
+
+
+@media (max-width: 700px) {
+
+    .certifications-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .certification-card {
+        min-height: auto;
     }
 }
