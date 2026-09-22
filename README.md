@@ -6,7 +6,7 @@ The website introduces my background, projects, technical qualifications, activi
 
 ## Website
 
-Live Website: https://people.tamu.edu/~tat2006
+Live Website: https://tracyyt.github.io/personal-website/
 
 ## Pages
 
@@ -31,40 +31,6 @@ Live Website: https://people.tamu.edu/~tat2006
 - HTML
 - CSS
 - JavaScript
-
-## External Links
-
-The website includes the following external links:
-
-1. **Texas A&M University** — Home page  
-   https://www.tamu.edu/
-
-2. **GitHub** — Home page  
-   https://github.com/TracyyT
-
-3. **LinkedIn** — Home page  
-   https://www.linkedin.com/in/tracythu/
-
-4. **houspo Live Demo** — Portfolio page  
-   https://houspo-nu.vercel.app/
-
-5. **CompTIA Security+ Credential** — Qualifications page  
-   https://www.credly.com/badges/19cf5280-7f8a-408c-b4bb-9f305152bf23/public_url
-
-## Peer Review Feedback
-
-During peer review, I received feedback on the organization, navigation, content, and visual design of my website.
-
-### Suggestions and Changes
-
-- **Make the navigation consistent across pages.**  
-  I incorporated this feedback by using the same navigation options on each main page so users can easily move between Home, Portfolio, Qualifications, Activities, and Sandbox.
-
-- **Improve the presentation of projects and experiences.**  
-  I reorganized project and activity descriptions to emphasize the technologies used, what I contributed, and what I learned from each experience.
-
-- **Make the website more interactive by making the cards move when hovering.**  
-  I incorporated this feedback by adding hover effects and transitions to cards and other interactive elements throughout the website.
 
 ## AI Prompt History
 
