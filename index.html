@@ -7,7 +7,16 @@
 
     <title>Tracy Tran</title>
 
-    <link id="theme-style" rel="stylesheet" href="style1.css">
+    <script>
+        const savedStyle =
+            localStorage.getItem("selectedStyle") || "style1.css";
+
+        document.write(
+            '<link id="theme-style" rel="stylesheet" href="' +
+            savedStyle +
+            '">'
+        );
+    </script>
     <!-- Font Awesome Icons -->
     <link rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -38,10 +47,12 @@
             <a href="sandbox.html">Sandbox</a>
         </nav>
 
-        <button class="style-toggle" onclick="toggleStyle()" 
-                aria-label="Switch website style">
-            <span class="toggle-label">Switch Style</span>
-            <span class="toggle-icon">◐</span>
+        <button
+            id="style-toggle"
+            class="style-toggle"
+            aria-label="Switch theme"
+        >
+            THEME<span class="toggle-icon">◐</span>
         </button>
 
     </header>

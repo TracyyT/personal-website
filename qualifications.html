@@ -7,7 +7,17 @@
 
     <title>Qualifications | Tracy Tran</title>
 
-    <link id="theme-style" rel="stylesheet" href="style1.css">
+    <script>
+        const savedStyle =
+            localStorage.getItem("selectedStyle") || "style1.css";
+
+        document.write(
+            '<link id="theme-style" rel="stylesheet" href="' +
+            savedStyle +
+            '">'
+        );
+    </script>
+
 </head>
 
 <body>
@@ -15,13 +25,13 @@
     <!-- navigation -->
     <header class="navbar">
 
-      <a href="index.html" class="logo">
-          <span class="logo-star">✦</span>
-          <span class="logo-flower">✿</span>
-          <span class="logo-name">Tracy</span>
-          <span class="logo-star">✦</span>
-          <span class="logo-flower">✿</span>
-      </a>
+        <a href="index.html" class="logo">
+            <span class="logo-star">✦</span>
+            <span class="logo-flower">✿</span>
+            <span class="logo-name">Tracy</span>
+            <span class="logo-star">✦</span>
+            <span class="logo-flower">✿</span>
+        </a>
 
         <nav class="nav-links">
             <a href="index.html">Home</a>
@@ -31,11 +41,13 @@
             <a href="sandbox.html">Sandbox</a>
         </nav>
 
-
-        <button class="style-toggle" onclick="toggleStyle()" 
-                aria-label="Switch website style">
-            <span class="toggle-label">Switch Style</span>
-            <span class="toggle-icon">◐</span>
+        <button
+            id="style-toggle"
+            class="style-toggle"
+            type="button"
+            aria-label="Switch theme"
+        >
+            THEME <span class="toggle-icon">◐</span>
         </button>
 
     </header>
@@ -43,48 +55,329 @@
 
     <main class="page">
 
+        <!-- background shapes -->
         <div class="shape shape-one"></div>
         <div class="shape shape-two"></div>
         <div class="shape shape-three"></div>
 
+
+        <!-- page heading -->
         <section class="page-header">
+
             <p class="eyebrow">QUALIFICATIONS</p>
+
             <h1>Resume & Skills.</h1>
 
             <p class="page-description">
                 My technical background, experience, and areas of interest.
             </p>
+
         </section>
 
 
-        <section class="page-content">
+        <section class="page-content qualifications-content">
 
-            <section class="page-content">
 
-                <div class="resume-section">
+            <!-- resume -->
+            <section class="qualification-section">
 
-                    <div class="section-heading">
-                        <p class="eyebrow">RESUME</p>
-                        <h2>My Resume</h2>
-                    </div>
+                <div class="section-heading">
+                    <p class="eyebrow">RESUME</p>
+                    <h2>My Resume</h2>
+
+                    <p class="section-description">
+                        A quick look at my education, experience, projects,
+                        and technical background.
+                    </p>
+                </div>
+
+
+                <div class="resume-card">
 
                     <div class="resume-frame">
+
                         <iframe
                             src="https://drive.google.com/file/d/15JE3w8qPU1XkJZeI5DMr_hjbu1OLCWzC/preview"
                             title="Tracy Tran Resume">
                         </iframe>
+
                     </div>
 
                     <a
                         href="https://drive.google.com/file/d/15JE3w8qPU1XkJZeI5DMr_hjbu1OLCWzC/view?usp=sharing"
                         target="_blank"
-                        class="resume-link">
+                        rel="noopener noreferrer"
+                        class="resume-link"
+                    >
                         Open Resume in Google Drive →
                     </a>
 
                 </div>
 
             </section>
+
+
+
+            <!-- technical skills -->
+            <section class="qualification-section">
+
+                <div class="section-heading">
+                    <p class="eyebrow">TECHNICAL SKILLS</p>
+                    <h2>Tools I work with.</h2>
+
+                    <p class="section-description">
+                        Technologies I have worked with through coursework,
+                        personal projects, and team projects.
+                    </p>
+                </div>
+
+
+                <div class="skills-grid">
+
+
+                    <!-- languages card -->
+                    <article class="skill-card">
+
+                        <div class="skill-card-top">
+                            <span class="skill-icon">⌘</span>
+                            <span class="card-number">01</span>
+                        </div>
+
+                        <h3>Languages</h3>
+
+                        <p class="skill-description">
+                            Programming languages I use across software,
+                            coursework, and personal projects.
+                        </p>
+
+                        <div class="skill-tags">
+                            <span>Python</span>
+                            <span>C++</span>
+                            <span>Java</span>
+                            <span>JavaScript</span>
+                            <span>Rust</span>
+                        </div>
+
+                    </article>
+
+
+                    <!-- frameworks card -->
+                    <article class="skill-card">
+
+                        <div class="skill-card-top">
+                            <span class="skill-icon">◇</span>
+                            <span class="card-number">02</span>
+                        </div>
+
+                        <h3>Frameworks & Libraries</h3>
+
+                        <p class="skill-description">
+                            Frameworks and libraries I use to build web
+                            applications and technical projects.
+                        </p>
+
+                        <div class="skill-tags">
+                            <span>React</span>
+                            <span>Express.js</span>
+                            <span>FastAPI</span>
+                            <span>Flask</span>
+                            <span>SymPy</span>
+                        </div>
+
+                    </article>
+
+
+                    <!-- tools card -->
+                    <article class="skill-card">
+
+                        <div class="skill-card-top">
+                            <span class="skill-icon">✦</span>
+                            <span class="card-number">03</span>
+                        </div>
+
+                        <h3>Tools & Technologies</h3>
+
+                        <p class="skill-description">
+                            Development tools and technologies I use for
+                            building, testing, and collaborating on projects.
+                        </p>
+
+                        <div class="skill-tags">
+                            <span>Git</span>
+                            <span>Linux</span>
+                            <span>REST APIs</span>
+                            <span>spaCy</span>
+                            <span>Transformers</span>
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+            </section>
+
+            <!-- certifications -->
+            <section class="qualification-section">
+
+                <div class="section-heading">
+                    <p class="eyebrow">CERTIFICATIONS</p>
+
+                    <h2>Certifications I've earned.</h2>
+
+                    <p class="section-description">
+                        Industry certifications I've earned while expanding my
+                        knowledge beyond coursework.
+                    </p>
+                </div>
+
+
+                <div class="certifications-grid">
+
+                    <!-- Security+ -->
+                    <article class="certification-card">
+
+                        <div class="certification-card-top">
+                            <span class="certification-icon">✓</span>
+                            <span class="card-number">01</span>
+                        </div>
+
+                        <p class="certification-type">COMPTIA</p>
+
+                        <h3>Security+</h3>
+
+                        <p class="certification-description">
+                            Validates foundational skills in cybersecurity,
+                            including security concepts, threats, vulnerabilities,
+                            architecture, operations, and risk management.
+                        </p>
+
+                        <a
+                            href="https://www.credly.com/badges/19cf5280-7f8a-408c-b4bb-9f305152bf23/public_url"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="certification-link"
+                        >
+                            View Credential ↗
+                        </a>
+
+                    </article>
+
+
+                    <!-- Project+ -->
+                    <article class="certification-card">
+
+                        <div class="certification-card-top">
+                            <span class="certification-icon">✓</span>
+                            <span class="card-number">02</span>
+                        </div>
+
+                        <p class="certification-type">COMPTIA</p>
+
+                        <h3>Project+</h3>
+
+                        <p class="certification-description">
+                            Validates knowledge of project management concepts,
+                            including project planning, communication, documentation,
+                            tools, and managing projects from start to finish.
+                        </p>
+
+                        <a
+                            href="https://www.credly.com/badges/76cfb27e-ccb5-44d3-a8b5-266df5904cb6/public_url"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="certification-link"
+                        >
+                            View Credential ↗
+                        </a>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- areas of interest -->
+            <section class="qualification-section">
+
+                <div class="section-heading">
+                    <p class="eyebrow">AREAS OF INTEREST</p>
+                    <h2>What I'm exploring.</h2>
+
+                    <p class="section-description">
+                        Areas of computer science that I am especially
+                        interested in learning more about and applying
+                        through future projects.
+                    </p>
+                </div>
+
+
+                <div class="interests-grid">
+
+
+                    <!-- software engineering card -->
+                    <article class="interest-card">
+
+                        <div class="interest-card-top">
+                            <span class="interest-icon">✦</span>
+                            <span class="card-number">01</span>
+                        </div>
+
+                        <h3>Software Engineering</h3>
+
+                        <p>
+                            I enjoy turning ideas into complete applications
+                            and understanding how different parts of a system
+                            work together. I'm especially interested in building
+                            useful and reliable software that solves real problems.
+                        </p>
+
+                    </article>
+
+
+                    <!-- AI card -->
+                    <article class="interest-card">
+
+                        <div class="interest-card-top">
+                            <span class="interest-icon">⌁</span>
+                            <span class="card-number">02</span>
+                        </div>
+
+                        <h3>Artificial Intelligence</h3>
+
+                        <p>
+                            I'm interested in how AI can make applications more
+                            adaptive and useful. I've been exploring recommendation
+                            systems, natural language processing, and practical
+                            ways to integrate AI into software.
+                        </p>
+
+                    </article>
+
+
+                    <!-- human-centered computing card -->
+                    <article class="interest-card">
+
+                        <div class="interest-card-top">
+                            <span class="interest-icon">◎</span>
+                            <span class="card-number">03</span>
+                        </div>
+
+                        <h3>Human-Centered Computing</h3>
+
+                        <p>
+                            I'm interested in how people interact with technology
+                            and how software can be designed around real user needs
+                            while remaining intuitive and accessible.
+                        </p>
+
+                    </article>
+
+
+                </div>
+
+            </section>
+
 
         </section>
 
@@ -94,8 +387,11 @@
     <footer>
         <p>Designed & built by Tracy Tran</p>
     </footer>
-<!--toggle for style-->
-<script src="script.js"></script>
+
+
+    <!-- toggle for style -->
+    <script src="script.js"></script>
+
 </body>
 
 </html>

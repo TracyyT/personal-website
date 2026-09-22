@@ -7,7 +7,16 @@
 
     <title>Activities | Tracy Tran</title>
 
-    <link id="theme-style" rel="stylesheet" href="style1.css">
+    <script>
+        const savedStyle =
+            localStorage.getItem("selectedStyle") || "style1.css";
+
+        document.write(
+            '<link id="theme-style" rel="stylesheet" href="' +
+            savedStyle +
+            '">'
+        );
+    </script>
 </head>
 
 <body>
@@ -32,11 +41,12 @@
         </nav>
 
 
-
-        <button class="style-toggle" onclick="toggleStyle()" 
-                aria-label="Switch website style">
-            <span class="toggle-label">Switch Style</span>
-            <span class="toggle-icon">◐</span>
+        <button
+            id="style-toggle"
+            class="style-toggle"
+            aria-label="Switch theme"
+        >
+            THEME<span class="toggle-icon">◐</span>
         </button>
     </header>
 
@@ -73,7 +83,7 @@
 
                             <div>
                                 <p class="activity-type">
-                                    EXPERIENCE & LEADERSHIP
+                                    LEADERSHIP & CREATIVE WORK
                                 </p>
 
                                 <h2>ETEST Vietnam</h2>
@@ -114,6 +124,67 @@
                             <span>Communication</span>
                             <span>Organization</span>
                             <span>Creativity</span>
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <article class="activity-card">
+
+                    <div class="activity-number">
+                        02
+                    </div>
+
+                    <div class="activity-info">
+
+                        <div class="activity-heading">
+
+                            <div>
+                                <p class="activity-type">
+                                    ROBOTICS & TEAMWORK
+                                </p>
+
+                                <h2>VEX U Robotics — WIRED</h2>
+
+                                <p class="activity-role">
+                                    Programmer • Texas A&M University
+                                </p>
+                            </div>
+
+                            <p class="activity-date">
+                                October 2025 — Present
+                            </p>
+
+                        </div>
+
+                        <p class="activity-description">
+                            As a programmer on WIRED, Texas A&M's VEX U Robotics team,
+                            I collaborate with other programmers and engineering team members
+                            to develop and test our competition robots.
+                        </p>
+
+                        <p class="activity-description">
+                            I develop C++ control logic using PROS for autonomous and
+                            driver-controlled operation, including sensor-based movement,
+                            motor control, and controller inputs. Testing and debugging with
+                            the team has strengthened my problem-solving, communication, and
+                            ability to work through technical challenges collaboratively.
+                        </p>
+
+                        <p class="activity-description">
+                            I competed with the team at the 2026 VEX U World Championship
+                            in Houston, where our team earned the Sportsmanship Award.
+                            The experience gave me the opportunity to work under pressure,
+                            communicate with teammates, and connect with other robotics teams.
+                        </p>
+
+                        <div class="soft-skills">
+                            <span>Teamwork</span>
+                            <span>Problem Solving</span>
+                            <span>Communication</span>
+                            <span>C++</span>
+                            <span>Robotics</span>
                         </div>
 
                     </div>

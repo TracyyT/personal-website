@@ -7,7 +7,16 @@
 
     <title>Projects | Tracy Tran</title>
 
-    <link id="theme-style" rel="stylesheet" href="style1.css">
+    <script>
+        const savedStyle =
+            localStorage.getItem("selectedStyle") || "style1.css";
+
+        document.write(
+            '<link id="theme-style" rel="stylesheet" href="' +
+            savedStyle +
+            '">'
+        );
+    </script>
 </head>
 
 <body>
@@ -31,10 +40,12 @@
         </nav>
 
 
-        <button class="style-toggle" onclick="toggleStyle()" 
-                aria-label="Switch website style">
-            <span class="toggle-label">Switch Style</span>
-            <span class="toggle-icon">◐</span>
+        <button
+            id="style-toggle"
+            class="style-toggle"
+            aria-label="Switch theme"
+        >
+            THEME<span class="toggle-icon">◐</span>
         </button>
 
     </header>
@@ -55,60 +66,150 @@
             </p>
         </section>
 
-
         <section class="page-content">
 
-            <section class="page-content">
+            <!-- houspo -->
+            <article class="project-card">
+                <div class="project-number">01</div>
 
-                <article class="project-card">
-
-                    <div class="project-number">
-                        01
-                    </div>
-
-                    <div class="project-info">
-
-                        <div class="project-heading">
-                            <div>
-                                <p class="project-type">
-                                    AGGIE CODING CLUB
-                                </p>
-
-                                <h2>Readify Chrome Extension</h2>
-                            </div>
-
-                            <p class="project-date">
-                                Aug 2024 — Dec 2024
-                            </p>
+                <div class="project-info">
+                    <div class="project-heading">
+                        <div>
+                            <p class="project-type">PERSONAL PROJECT</p>
+                            <h2>houspo</h2>
                         </div>
 
-                        <p class="project-description">
-                            An NLP-powered Chrome extension designed to make online
-                            reading faster and more accessible by summarizing highlighted
-                            web content using web scraping and APIs.
+                        <p class="project-date">
+                            June 2026 — September 2026
                         </p>
-
-                        <p class="project-description">
-                            I developed the Python and Flask backend, built the JavaScript
-                            frontend, and integrated spaCy and Transformers for natural
-                            language processing and text summarization.
-                        </p>
-
-                        <div class="project-tags">
-                            <span>Python</span>
-                            <span>JavaScript</span>
-                            <span>Flask</span>
-                            <span>spaCy</span>
-                            <span>Transformers</span>
-                        </div>
-
                     </div>
 
-                </article>
+                    <p class="project-demo">
+                        <strong>Check it out:</strong>
+                        <a href="https://houspo-nu.vercel.app/"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                            Live Demo ↗
+                        </a>
+                    </p>
 
-            </section>
+                    <p class="project-description">
+                        Developed a home design platform that matches live product
+                        listings to users' preferences, helping users quickly find
+                        all items that fit their chosen aesthetic.
+                    </p>
+
+                    <p class="project-description">
+                        Built a hybrid recommendation system combining rule-based
+                        and AI-assisted product scoring and similarity ranking based
+                        on persistent user feedback, with Express.js API with AI fallback.
+                    </p>
+
+                    <div class="project-tags">
+                        <span>React</span>
+                        <span>JavaScript</span>
+                        <span>Express.js</span>
+                        <span>REST APIs</span>
+                        <span>OpenAI API</span>
+                        <span>HTML/CSS</span>
+                    </div>
+                </div>
+            </article>
+
+
+            <!-- MathEm -->
+            <article class="project-card">
+                <div class="project-number">02</div>
+
+                <div class="project-info">
+                    <div class="project-heading">
+                        <div>
+                            <p class="project-type">PERSONAL PROJECT</p>
+                            <h2>MathEm</h2>
+                        </div>
+
+                        <p class="project-date">
+                            September 2026 — Present
+                        </p>
+                    </div>
+
+                    <p class="project-demo">
+                        <strong>Check it out:</strong>
+                        <a href="https://tracyyt.github.io/mathem/"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                            Live Demo ↗
+                        </a>
+                    </p>
+
+                    <p class="project-description">
+                        Developed a personalized Math practice platform that helps
+                        students build consistent study habits through short,
+                        scheduled problems tailored to their course, difficulty,
+                        and preferred times.
+                    </p>
+
+                    <p class="project-description">
+                        Developing an AI-assisted practice system to generate Math
+                        problems, hints, and step-by-step help, with SymPy-based
+                        answer verification and adaptive difficulty based on
+                        student feedback.
+                    </p>
+
+                    <div class="project-tags">
+                        <span>React</span>
+                        <span>JavaScript</span>
+                        <span>FastAPI</span>
+                        <span>SymPy</span>
+                        <span>OpenAI API</span>
+                        <span>HTML/CSS</span>
+                    </div>
+                </div>
+            </article>
+
+
+            <!-- Readify -->
+            <article class="project-card">
+                <div class="project-number">03</div>
+
+                <div class="project-info">
+                    <div class="project-heading">
+                        <div>
+                            <p class="project-type">AGGIE CODING CLUB</p>
+                            <h2>Readify Chrome Extension</h2>
+                        </div>
+
+                        <p class="project-date">
+                            August 2024 — December 2024
+                        </p>
+                    </div>
+
+                    <p class="project-location">
+                        College Station, TX
+                    </p>
+
+                    <p class="project-description">
+                        Developed NLP-powered Chrome extension using web scraping
+                        and API to summarize highlighted web content.
+                    </p>
+
+                    <p class="project-description">
+                        Built Python/Flask backend and JavaScript frontend;
+                        integrated spaCy/Transformers for text processing.
+                    </p>
+
+                    <div class="project-tags">
+                        <span>Python</span>
+                        <span>JavaScript</span>
+                        <span>Flask</span>
+                        <span>spaCy</span>
+                        <span>Transformers</span>
+                    </div>
+                </div>
+            </article>
 
         </section>
+
 
     </main>
 
