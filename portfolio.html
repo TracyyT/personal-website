@@ -6,63 +6,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Projects | Tracy Tran</title>
+    <meta name="description" content="Selected projects by Tracy Tran: houspo, MathEm, and the Readify Chrome extension.">
+    <meta name="author" content="Tracy Tran">
+    <meta name="theme-color" content="#FFF8F0">
+    <link rel="canonical" href="https://tracyyt.github.io/personal-website/portfolio.html">
 
-    <script>
-        const savedStyle =
-            localStorage.getItem("selectedStyle") || "style1.css";
+    <!-- social sharing preview -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Projects | Tracy Tran">
+    <meta property="og:description" content="Selected projects by Tracy Tran: houspo, MathEm, and the Readify Chrome extension.">
+    <meta property="og:url" content="https://tracyyt.github.io/personal-website/portfolio.html">
+    <meta property="og:image" content="https://tracyyt.github.io/personal-website/og-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
 
-        document.write(
-            '<link id="theme-style" rel="stylesheet" href="' +
-            savedStyle +
-            '">'
-        );
-    </script>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+    <a href="#main" class="skip-link">Skip to content</a>
+
     <!-- navigation -->
     <header class="navbar">
-      <a href="index.html" class="logo">
-          <span class="logo-star">✦</span>
-          <span class="logo-flower">✿</span>
-          <span class="logo-name">Tracy</span>
-          <span class="logo-star">✦</span>
-          <span class="logo-flower">✿</span>
-      </a>
 
-        <nav class="nav-links">
+        <a href="index.html" class="logo" aria-label="Tracy Tran, home">
+            <span class="logo-star" aria-hidden="true">✦</span>
+            <span class="logo-name">Tracy</span>
+            <span class="logo-star" aria-hidden="true">✦</span>
+        </a>
+
+        <nav class="nav-links" aria-label="Main">
             <a href="index.html">Home</a>
-            <a href="portfolio.html" class="active">Portfolio</a>
+            <a href="portfolio.html" class="active" aria-current="page">Portfolio</a>
             <a href="qualifications.html">Qualifications</a>
             <a href="activities.html">Activities</a>
             <a href="sandbox.html">Sandbox</a>
         </nav>
 
-
-        <button
-            id="style-toggle"
-            class="style-toggle"
-            aria-label="Switch theme"
-        >
-            THEME<span class="toggle-icon">◐</span>
-        </button>
-
     </header>
 
+    <main id="main" class="page">
 
-    <main class="page">
-
-        <div class="shape shape-one"></div>
-        <div class="shape shape-two"></div>
-        <div class="shape shape-three"></div>
+        <div class="shape shape-one" aria-hidden="true"></div>
+        <div class="shape shape-two" aria-hidden="true"></div>
+        <div class="shape shape-three" aria-hidden="true"></div>
 
         <section class="page-header">
             <p class="eyebrow">MY WORK</p>
             <h1>Projects.</h1>
 
             <p class="page-description">
-                Collection of things I've built, explored, and worked on.
+                A selection of things I've built, explored, and worked on.
             </p>
         </section>
 
@@ -84,13 +83,8 @@
                         </p>
                     </div>
 
-                    <p class="project-demo">
-                        <strong>Check it out:</strong>
-                        <a href="https://houspo-nu.vercel.app/"
-                        target="_blank"
-                        rel="noopener noreferrer">
-                            Live Demo ↗
-                        </a>
+                    <p class="project-links">
+                        <a href="https://houspo-nu.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-link">Live demo <span aria-hidden="true">↗</span></a>
                     </p>
 
                     <p class="project-description">
@@ -116,7 +110,6 @@
                 </div>
             </article>
 
-
             <!-- MathEm -->
             <article class="project-card">
                 <div class="project-number">02</div>
@@ -133,13 +126,8 @@
                         </p>
                     </div>
 
-                    <p class="project-demo">
-                        <strong>Check it out:</strong>
-                        <a href="https://tracyyt.github.io/mathem/"
-                        target="_blank"
-                        rel="noopener noreferrer">
-                            Live Demo ↗
-                        </a>
+                    <p class="project-links">
+                        <a href="https://tracyyt.github.io/mathem/" target="_blank" rel="noopener noreferrer" class="project-link">Live demo <span aria-hidden="true">↗</span></a>
                     </p>
 
                     <p class="project-description">
@@ -166,7 +154,6 @@
                     </div>
                 </div>
             </article>
-
 
             <!-- Readify -->
             <article class="project-card">
@@ -210,15 +197,14 @@
 
         </section>
 
-
     </main>
 
-
     <footer>
-        <p>Designed & built by Tracy Tran</p>
+        <p>&copy; <span id="year">2026</span> Tracy Tran &middot; Designed &amp; built from scratch with HTML, CSS &amp; JavaScript</p>
     </footer>
-<!--toggle for style-->
-<script src="script.js"></script>
+
+    <!-- small page scripts -->
+    <script src="script.js"></script>
 </body>
 
 </html>

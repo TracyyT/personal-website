@@ -2,7 +2,7 @@
 
 A personal portfolio website created for CSCE 331 at Texas A&M University.
 
-The website introduces my background, projects, technical qualifications, activities, and interests through multiple pages and two different visual styles.
+The website introduces my background, projects, technical qualifications, activities, and interests through multiple pages.
 
 ## Website
 
@@ -18,10 +18,11 @@ Live Website: https://tracyyt.github.io/personal-website/
 
 ## Features
 
-- Multi-page HTML website
-- Two distinct CSS layouts and visual styles
-- JavaScript style toggle with persistent theme selection
-- Responsive layouts
+- Multi-page HTML website with a shared, responsive layout
+- Optimized images for fast loading
+- Accessible navigation (skip link, keyboard focus styles, ARIA labels)
+- Search and social-sharing metadata with a custom preview image
+- Custom 404 page
 - Embedded resume
 - Interactive AI-generated sandbox page
 - External links to professional profiles, projects, and credentials
