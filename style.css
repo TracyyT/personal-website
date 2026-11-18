@@ -1,4 +1,4 @@
-/*style 1 basic boho */
+/* Tracy Tran: site styles */
 * {
     box-sizing: border-box; /* include padding and border inside the element's total size */
 }
@@ -11,7 +11,7 @@ body {
     margin: 0; /* remove browser default margin */
     background-color: #FFF8F0; /* main light cream background */
     color: #51463e; /* default text color */
-    font-family: Arial, Helvetica, sans-serif; /* main font for normal text */
+    font-family: "Inter", Arial, Helvetica, sans-serif; /* main font for normal text */
 }
 
 /* some boho layouts for my general pages :) */
@@ -41,7 +41,7 @@ body {
     max-width: 550px; /* stop paragraph from getting too wide */
     margin: 18px 0 0; /* space above description */
     color: #746960; /* softer brown-gray text */
-    font-size: 13px; /* smaller paragraph size */
+    font-size: 15px; /* smaller paragraph size */
     line-height: 1.8; /* add space between lines */
 }
 
@@ -69,7 +69,7 @@ body {
 }
 
 .logo {
-    font-family: Georgia, "Times New Roman", serif; /* more elegant font for logo */
+    font-family: "Lora", Georgia, "Times New Roman", serif; /* more elegant font for logo */
     font-size: 20px; /* logo text size */
     color: #684f40; /* brown logo color */
     text-decoration: none; /* remove underline */
@@ -81,10 +81,6 @@ body {
     font-size: 22px;
 }
 
-.logo-flower {
-    display: none;
-}
-
 .nav-links {
     display: flex; /* navigation links appear in a row */
     align-items: center; /* vertically align links */
@@ -94,7 +90,7 @@ body {
 .nav-links a {
     color: #6d6057; /* normal nav link color */
     text-decoration: none; /* remove underline */
-    font-size: 13px; /* small nav text */
+    font-size: 14px; /* small nav text */
     letter-spacing: 0.5px; /* add small space between letters */
     padding-bottom: 0px; /* leave room for active underline */
     transition: 0.4s; /* smooth hover color change */
@@ -138,7 +134,7 @@ body {
     margin: 0 0 8px; /* space below label */
     padding-top: 5px; /* small space above */
     color: #a17d67; /* muted brown */
-    font-size: 11px; /* small label text */
+    font-size: 12px; /* small label text */
     font-weight: bold; /* make it stand out */
     letter-spacing: 2px; /* spread letters for editorial look */
     text-transform: uppercase; /* make label all caps */
@@ -146,7 +142,7 @@ body {
 
 h1 {
     margin: 0; /* remove default heading margin */
-    font-family: Georgia, "Times New Roman", serif; /* serif heading font */
+    font-family: "Lora", Georgia, "Times New Roman", serif; /* serif heading font */
     font-size: 44px; /* main heading size */
     line-height: 0.98; /* keep lines close together */
     font-weight: normal; /* softer heading weight */
@@ -161,7 +157,7 @@ h1 span {
 
 .tagline {
     margin: 18px 0 14px; /* spacing above and below tagline */
-    font-family: Georgia, "Times New Roman", serif; /* serif font for personality */
+    font-family: "Lora", Georgia, "Times New Roman", serif; /* serif font for personality */
     font-size: 21px; /* tagline size */
     font-style: italic; /* softer editorial style */
     color: #846b5c; /* muted brown */
@@ -170,7 +166,7 @@ h1 span {
 .description {
     max-width: 570px; /* keep paragraph easy to read */
     margin: 0 0 24px; /* space below paragraph */
-    font-size: 12px; /* paragraph text size */
+    font-size: 15px; /* paragraph text size */
     line-height: 1.7; /* spacing between lines */
     color: #625850; /* normal paragraph color */
 }
@@ -200,7 +196,7 @@ h1 span {
     color: #fffaf5; /* light button text */
     text-decoration: none; /* remove link underline */
     border-radius: 30px; /* rounded pill shape */
-    font-size: 13px; /* button text size */
+    font-size: 14px; /* button text size */
     letter-spacing: 0.3px; /* slight letter spacing */
     transition: 0.25s; /* smooth hover effect */
 }
@@ -212,7 +208,7 @@ h1 span {
 
 .secondary-button {
     color: #755a4a; /* secondary button text color */
-    font-family: Georgia, "Times New Roman", serif; /* serif style */
+    font-family: "Lora", Georgia, "Times New Roman", serif; /* serif style */
     font-size: 14px; /* button text size */
     text-decoration: none; /* remove normal underline */
     border-bottom: 1px solid #bca18f; /* custom underline */
@@ -278,8 +274,8 @@ h1 span {
     border: 1px solid #e4d7ca; /* light border */
     border-radius: 25px; /* rounded label */
     box-shadow: 0 10px 25px rgba(82, 63, 50, 0.12); /* soft shadow */
-    font-family: Georgia, "Times New Roman", serif; /* serif label font */
-    font-size: 13px; /* label text size */
+    font-family: "Lora", Georgia, "Times New Roman", serif; /* serif label font */
+    font-size: 14px; /* label text size */
     color: #765a49; /* brown text */
     z-index: 4; /* place note above photo */
     transform: rotate(-3deg); /* tilt note slightly */
@@ -294,7 +290,7 @@ h1 span {
 .little-star {
     position: absolute; /* position decorative stars around photo */
     color: #a88369; /* star color */
-    font-family: Georgia, serif; /* star font */
+    font-family: "Lora", Georgia, serif; /* star font */
     z-index: 4; /* place stars above photo */
 }
 
@@ -356,14 +352,14 @@ h1 span {
 .contact-label {
     margin: 0 0 10px; /* spacing under small label */
     color: #a17d67; /* muted brown */
-    font-size: 10px; /* small label size */
+    font-size: 11px; /* small label size */
     font-weight: bold; /* make label stand out */
     letter-spacing: 2px; /* spread letters */
 }
 
 .contact-section h2 {
     margin: 0 0 12px; /* space below heading */
-    font-family: Georgia, "Times New Roman", serif; /* serif heading */
+    font-family: "Lora", Georgia, "Times New Roman", serif; /* serif heading */
     font-size: 32px; /* heading size */
     font-weight: normal; /* softer heading */
     color: #654f41; /* dark brown */
@@ -372,7 +368,7 @@ h1 span {
 .contact-description {
     margin: 0 auto 28px; /* center and add space below */
     color: #746960; /* softer text color */
-    font-size: 12px; /* description size */
+    font-size: 15px; /* description size */
 }
 
 .contact-links {
@@ -387,7 +383,7 @@ h1 span {
     align-items: center; /* center icon and text */
     gap: 9px; /* space between icon and text */
     color: #765a49; /* default link color */
-    font-size: 11px; /* link text size */
+    font-size: 12px; /* link text size */
     text-decoration: none; /* remove underline */
     transition: 0.25s; /* smooth hover */
 }
@@ -438,8 +434,8 @@ h1 span {
 
 .number {
     color: #aa8a75; /* number accent color */
-    font-family: Georgia, serif; /* serif number */
-    font-size: 12px; /* number size */
+    font-family: "Lora", Georgia, serif; /* serif number */
+    font-size: 13px; /* number size */
     font-style: italic; /* decorative number style */
     padding-top: 5px; /* line number up with heading */
 }
@@ -447,7 +443,7 @@ h1 span {
 .intro-item h2 {
     margin: 0 0 8px; /* space below heading */
     color: #654f41; /* dark brown heading */
-    font-family: Georgia, "Times New Roman", serif; /* serif heading */
+    font-family: "Lora", Georgia, "Times New Roman", serif; /* serif heading */
     font-size: 18px; /* heading size */
     font-weight: normal; /* lighter heading weight */
 }
@@ -455,7 +451,7 @@ h1 span {
 .intro-item p {
     margin: 0; /* remove default paragraph margin */
     color: #746960; /* paragraph text color */
-    font-size: 12px; /* paragraph size */
+    font-size: 15px; /* paragraph size */
     line-height: 1.7; /* improve readability */
 }
 
@@ -465,8 +461,8 @@ footer {
     text-align: center; /* center footer text */
     background-color: #e8ddd2; /* beige footer background */
     color: #827064; /* footer text color */
-    font-family: Georgia, "Times New Roman", serif; /* serif footer text */
-    font-size: 12px; /* footer text size */
+    font-family: "Lora", Georgia, "Times New Roman", serif; /* serif footer text */
+    font-size: 13px; /* footer text size */
 }
 
 /* smaller screens when we resize window??? width = 900px */
@@ -563,7 +559,7 @@ footer {
 
 .project-number {
     color: #aa8a75; /* muted accent color */
-    font-family: Georgia, "Times New Roman", serif; /* serif number */
+    font-family: "Lora", Georgia, "Times New Roman", serif; /* serif number */
     font-size: 14px; /* number size */
     font-style: italic; /* decorative number */
     padding-top: 8px; /* line it up with heading */
@@ -584,7 +580,7 @@ footer {
 .project-type {
     margin: 0 0 7px; /* space below small label */
     color: #a17d67; /* muted accent color */
-    font-size: 10px; /* small label size */
+    font-size: 11px; /* small label size */
     font-weight: bold; /* make label stand out */
     letter-spacing: 2px; /* spread letters */
 }
@@ -592,7 +588,7 @@ footer {
 .project-heading h2 {
     margin: 0; /* remove default heading margin */
     color: #654f41; /* dark brown */
-    font-family: Georgia, "Times New Roman", serif; /* serif heading */
+    font-family: "Lora", Georgia, "Times New Roman", serif; /* serif heading */
     font-size: 25px; /* project title size */
     font-weight: normal; /* softer heading weight */
 }
@@ -600,8 +596,8 @@ footer {
 .project-date {
     margin: 7px 0 0; /* line date up with title */
     color: #927b6d; /* lighter brown */
-    font-family: Georgia, "Times New Roman", serif; /* serif date */
-    font-size: 12px; /* date size */
+    font-family: "Lora", Georgia, "Times New Roman", serif; /* serif date */
+    font-size: 13px; /* date size */
     font-style: italic; /* date styling */
     white-space: nowrap; /* keep date on one line */
 }
@@ -610,7 +606,7 @@ footer {
     max-width: 700px; /* keep project paragraph readable */
     margin: 0 0 12px; /* space between paragraphs */
     color: #625850; /* paragraph color */
-    font-size: 12px; /* paragraph size */
+    font-size: 15px; /* paragraph size */
     line-height: 1.8; /* line spacing */
 }
 
@@ -627,7 +623,7 @@ footer {
     border: 1px solid #d5c3b4; /* tag border */
     border-radius: 20px; /* rounded pill shape */
     color: #765a49; /* tag text color */
-    font-size: 10px; /* tag text size */
+    font-size: 11px; /* tag text size */
     letter-spacing: 0.3px; /* slight letter spacing */
 }
 
@@ -661,7 +657,7 @@ footer {
 
 .activity-number {
     color: #aa8a75; /* accent color for number */
-    font-family: Georgia, "Times New Roman", serif; /* serif number */
+    font-family: "Lora", Georgia, "Times New Roman", serif; /* serif number */
     font-size: 14px; /* number size */
     font-style: italic; /* decorative number style */
     padding-top: 8px; /* align number with heading */
@@ -682,7 +678,7 @@ footer {
 .activity-type {
     margin: 0 0 7px; /* space below category label */
     color: #a17d67; /* muted accent color */
-    font-size: 10px; /* small label */
+    font-size: 11px; /* small label */
     font-weight: bold; /* emphasize label */
     letter-spacing: 2px; /* spread letters */
 }
@@ -690,7 +686,7 @@ footer {
 .activity-heading h2 {
     margin: 0; /* remove default heading margin */
     color: #654f41; /* dark brown */
-    font-family: Georgia, "Times New Roman", serif; /* serif heading */
+    font-family: "Lora", Georgia, "Times New Roman", serif; /* serif heading */
     font-size: 25px; /* activity title size */
     font-weight: normal; /* softer heading weight */
 }
@@ -698,7 +694,7 @@ footer {
 .activity-role {
     margin: 6px 0 0; /* small space above role */
     color: #846b5c; /* muted brown */
-    font-family: Georgia, "Times New Roman", serif; /* serif role text */
+    font-family: "Lora", Georgia, "Times New Roman", serif; /* serif role text */
     font-size: 14px; /* role text size */
     font-style: italic; /* make role look separate from title */
 }
@@ -706,8 +702,8 @@ footer {
 .activity-date {
     margin: 7px 0 0; /* line date up with heading */
     color: #927b6d; /* lighter brown */
-    font-family: Georgia, "Times New Roman", serif; /* serif date */
-    font-size: 12px; /* date size */
+    font-family: "Lora", Georgia, "Times New Roman", serif; /* serif date */
+    font-size: 13px; /* date size */
     font-style: italic; /* date styling */
     white-space: nowrap; /* keep date in one line */
 }
@@ -716,7 +712,7 @@ footer {
     max-width: 700px; /* keep text readable */
     margin: 0 0 12px; /* space between paragraphs */
     color: #625850; /* paragraph text color */
-    font-size: 12px; /* paragraph size */
+    font-size: 15px; /* paragraph size */
     line-height: 1.8; /* space between lines */
 }
 
@@ -733,7 +729,7 @@ footer {
     border: 1px solid #d5c3b4; /* skill border */
     border-radius: 20px; /* rounded pill shape */
     color: #765a49; /* skill text color */
-    font-size: 10px; /* skill text size */
+    font-size: 11px; /* skill text size */
     letter-spacing: 0.3px; /* slight letter spacing */
 }
 
@@ -752,59 +748,6 @@ footer {
         margin-top: 0; /* remove extra margin */
     }
 }
-/* theme toggle */
-
-.style-toggle {
-    position: fixed;
-    right: 22px;
-    top: 80%;
-    z-index: 1000;
-    pointer-events: auto;
-    padding: 10px 10px;
-
-    display: flex;
-    align-items: center;
-    gap: 4px;
-
-    background-color: #e8ddd2;
-    color: #765a49;
-
-    border: 1px solid #d5c3b4;
-    border-radius: 999px;
-
-    /* font-family: Arial, Helvetica, sans-serif; */
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 10px;
-    letter-spacing: 1.3px;
-
-    cursor: pointer;
-    pointer-events: auto;
-
-    box-shadow: 0 5px 15px rgba(60, 45, 35, 0.12);
-
-    transform:
-        translateY(
-            calc(-50% + var(--scroll-move, 0px))
-        );
-
-    transition: 0.25s;
-}
-
-.toggle-icon {
-    font-size: 15px;
-    line-height: 1;
-}
-
-.style-toggle:hover {
-    background-color: #8c6a55;
-    color: #fffaf5;
-
-    transform:
-        translateY(
-            calc(-50% + var(--scroll-move, 0px))
-        )
-        scale(1.04);
-}
 
 @media (max-width: 500px) {
     .navbar {
@@ -816,7 +759,7 @@ footer {
     }
 
     .nav-links a {
-        font-size: 11px; /* smaller nav text */
+        font-size: 12px; /* smaller nav text */
     }
 
     .hero {
@@ -850,7 +793,7 @@ footer {
         right: -15px; /* move note slightly inward */
         bottom: 18px; /* position note near bottom */
         padding: 10px 15px; /* smaller padding */
-        font-size: 12px; /* smaller note text */
+        font-size: 13px; /* smaller note text */
     }
 
     .tagline {
@@ -868,7 +811,7 @@ footer {
     }
 
     .description {
-        font-size: 12px; /* keep readable paragraph size */
+        font-size: 15px; /* keep readable paragraph size */
     }
 
     .hero-buttons {
@@ -876,26 +819,6 @@ footer {
     }
 }
 
-.project-demo {
-    margin: 6px 0 18px;
-    font-size: 0.95rem;
-}
-
-.project-demo strong {
-    font-weight: 700;
-}
-
-.project-demo a {
-    color: inherit;
-    font-weight: 700;
-    text-decoration: underline;
-    text-underline-offset: 4px;
-    transition: opacity 0.2s ease;
-}
-
-.project-demo a:hover {
-    opacity: 0.6;
-}
 
 /* =========================================
    QUALIFICATIONS PAGE
@@ -1385,4 +1308,123 @@ footer {
     .certification-card {
         min-height: auto;
     }
+}
+/* =========================================
+   POLISH: links, accessibility, 404
+   ========================================= */
+
+/* smoother, crisper text rendering */
+body {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+/* "skip to content" link for keyboard users (hidden until focused) */
+.skip-link {
+    position: absolute;
+    left: 16px;
+    top: -60px;
+    z-index: 2000;
+    padding: 10px 16px;
+    background-color: #8c6a55;
+    color: #fffaf5;
+    border-radius: 999px;
+    font-size: 14px;
+    text-decoration: none;
+    transition: top 0.2s;
+}
+
+.skip-link:focus {
+    top: 12px;
+}
+
+/* visible focus ring for keyboard navigation */
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid #8c6a55;
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+/* project links (live demo, code, etc.) */
+.project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0 0 18px;
+}
+
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border: 1px solid #bca18f;
+    border-radius: 999px;
+    color: #6b4f3f;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.25s;
+}
+
+.project-link:hover {
+    background-color: #8c6a55;
+    border-color: #8c6a55;
+    color: #fffaf5;
+}
+
+.project-location {
+    margin: -8px 0 16px;
+    color: #927b6d;
+    font-family: "Lora", Georgia, "Times New Roman", serif;
+    font-size: 14px;
+    font-style: italic;
+}
+
+/* photo note is now a <p>: reset paragraph margin */
+p.photo-note {
+    margin: 0;
+}
+
+/* contact heading is now an <h2> styled as a small label */
+h2.contact-label {
+    margin: 0 0 18px;
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* 404 page */
+.not-found {
+    min-height: 60vh;
+}
+
+.not-found .hero-buttons {
+    margin-top: 32px;
+}
+
+/* respect visitors who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+        animation: none !important;
+    }
+}
+
+/* match the qualifications headings to the serif headings used elsewhere */
+.qualification-section .section-heading h2,
+.skill-card h3,
+.certification-card h3,
+.interest-card h3 {
+    font-family: "Lora", Georgia, "Times New Roman", serif;
+    font-weight: 500;
 }
