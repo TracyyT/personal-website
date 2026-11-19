@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Projects | Tracy Tran</title>
-    <meta name="description" content="Projects by Tracy Tran, including Dine &amp; Dash, MathEm, TripGenda, houspo, and the Readify Chrome extension.">
+    <meta name="description" content="Projects by Tracy Tran, including houspo (computer vision product search), MathEm, Dine &amp; Dash, TripGenda, and the Readify Chrome extension.">
     <meta name="author" content="Tracy Tran">
     <meta name="theme-color" content="#FFF8F0">
     <link rel="canonical" href="https://tracyyt.github.io/personal-website/portfolio.html">
@@ -14,7 +14,7 @@
     <!-- social sharing preview -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Projects | Tracy Tran">
-    <meta property="og:description" content="Projects by Tracy Tran, including Dine &amp; Dash, MathEm, TripGenda, houspo, and the Readify Chrome extension.">
+    <meta property="og:description" content="Projects by Tracy Tran, including houspo (computer vision product search), MathEm, Dine &amp; Dash, TripGenda, and the Readify Chrome extension.">
     <meta property="og:url" content="https://tracyyt.github.io/personal-website/portfolio.html">
     <meta property="og:image" content="https://tracyyt.github.io/personal-website/og-image.jpg">
     <meta name="twitter:card" content="summary_large_image">
@@ -67,7 +67,7 @@
 
         <section class="page-content">
 
-            <!-- Dine & Dash -->
+            <!-- houspo -->
             <article class="project-card">
                 <div class="project-number">01</div>
 
@@ -75,33 +75,51 @@
                     <div class="project-heading">
                         <div>
                             <p class="project-type">PERSONAL PROJECT</p>
-                            <h2>Dine &amp; Dash</h2>
+                            <h2>houspo</h2>
                         </div>
 
                         <p class="project-date">
-                            November 2026 — Present
+                            June 2026 — Present
                         </p>
                     </div>
 
                     <p class="project-links">
-                        <a href="https://dine-and-dash-nu.vercel.app" target="_blank" rel="noopener noreferrer" class="project-link">Play it <span aria-hidden="true">↗</span></a>
-                        <a href="https://github.com/TracyyT/dine-and-dash" target="_blank" rel="noopener noreferrer" class="project-link">Code <span aria-hidden="true">↗</span></a>
+                        <a href="https://houspo-nu.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-link">Live demo <span aria-hidden="true">↗</span></a>
+                        <a href="https://github.com/TracyyT/houspo" target="_blank" rel="noopener noreferrer" class="project-link">Code <span aria-hidden="true">↗</span></a>
                     </p>
 
                     <p class="project-description">
-                        Built a pixel-style restaurant management game where players seat guests, take orders, cook, serve, collect payment, and clean tables against the clock across seven themed chapters of ten levels each.
+                        Developed a home design platform that matches live product
+                        listings to users' preferences, using a hybrid recommendation
+                        system that blends rule-based scoring with AI-assisted style
+                        scoring and adapts to user feedback.
                     </p>
 
                     <p class="project-description">
-                        Designed the game engine separately from rendering so levels can be simulated headlessly in Node, with every visual drawn in SVG and CSS, plus staff upgrades, lives, daily bonuses, and progress saved in localStorage.
+                        Built "Shop this room," a computer vision feature where users
+                        upload a room photo, YOLOE detects each furniture and decor item,
+                        and SigLIP 2 embeddings with a learned adapter find visually
+                        similar products across a 779-product live catalog, ranked for
+                        the user's style and budget.
+                    </p>
+
+                    <p class="project-description">
+                        Improved top-5 retrieval accuracy from 69.3% (CLIP baseline) to
+                        88.8% on 544 catalog test pairs and reached 78.6% on hand-labeled
+                        real room photos; deployed the FastAPI vision service on Modal
+                        with automatic fallback to regular recommendations.
                     </p>
 
                     <div class="project-tags">
-                        <span>JavaScript</span>
-                        <span>Vite</span>
-                        <span>SVG</span>
-                        <span>HTML/CSS</span>
-                        <span>Game Design</span>
+                        <span>React</span>
+                        <span>Express.js</span>
+                        <span>Python</span>
+                        <span>PyTorch</span>
+                        <span>YOLOE</span>
+                        <span>SigLIP 2</span>
+                        <span>FastAPI</span>
+                        <span>Modal</span>
+                        <span>OpenAI API</span>
                     </div>
                 </div>
             </article>
@@ -152,9 +170,48 @@
                 </div>
             </article>
 
-            <!-- TripGenda -->
+            <!-- Dine & Dash -->
             <article class="project-card">
                 <div class="project-number">03</div>
+
+                <div class="project-info">
+                    <div class="project-heading">
+                        <div>
+                            <p class="project-type">PERSONAL PROJECT</p>
+                            <h2>Dine &amp; Dash</h2>
+                        </div>
+
+                        <p class="project-date">
+                            November 2026 — Present
+                        </p>
+                    </div>
+
+                    <p class="project-links">
+                        <a href="https://dine-and-dash-nu.vercel.app" target="_blank" rel="noopener noreferrer" class="project-link">Play it <span aria-hidden="true">↗</span></a>
+                        <a href="https://github.com/TracyyT/dine-and-dash" target="_blank" rel="noopener noreferrer" class="project-link">Code <span aria-hidden="true">↗</span></a>
+                    </p>
+
+                    <p class="project-description">
+                        Built a pixel-style restaurant management game where players seat guests, take orders, cook, serve, collect payment, and clean tables against the clock across seven themed chapters of ten levels each.
+                    </p>
+
+                    <p class="project-description">
+                        Designed the game engine separately from rendering so levels can be simulated headlessly in Node, with every visual drawn in SVG and CSS, plus staff upgrades, lives, daily bonuses, and progress saved in localStorage.
+                    </p>
+
+                    <div class="project-tags">
+                        <span>JavaScript</span>
+                        <span>Vite</span>
+                        <span>SVG</span>
+                        <span>HTML/CSS</span>
+                        <span>Game Design</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- TripGenda -->
+            <article class="project-card">
+                <div class="project-number">04</div>
 
                 <div class="project-info">
                     <div class="project-heading">
@@ -186,50 +243,6 @@
                         <span>React Router</span>
                         <span>Vite</span>
                         <span>OpenStreetMap API</span>
-                    </div>
-                </div>
-            </article>
-
-            <!-- houspo -->
-            <article class="project-card">
-                <div class="project-number">04</div>
-
-                <div class="project-info">
-                    <div class="project-heading">
-                        <div>
-                            <p class="project-type">PERSONAL PROJECT</p>
-                            <h2>houspo</h2>
-                        </div>
-
-                        <p class="project-date">
-                            June 2026 — September 2026
-                        </p>
-                    </div>
-
-                    <p class="project-links">
-                        <a href="https://houspo-nu.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-link">Live demo <span aria-hidden="true">↗</span></a>
-                        <a href="https://github.com/TracyyT/houspo" target="_blank" rel="noopener noreferrer" class="project-link">Code <span aria-hidden="true">↗</span></a>
-                    </p>
-
-                    <p class="project-description">
-                        Developed a home design platform that matches live product
-                        listings to users' preferences, helping users quickly find
-                        all items that fit their chosen aesthetic.
-                    </p>
-
-                    <p class="project-description">
-                        Built a hybrid recommendation system combining rule-based
-                        and AI-assisted product scoring and similarity ranking based
-                        on persistent user feedback, with Express.js API with AI fallback.
-                    </p>
-
-                    <div class="project-tags">
-                        <span>React</span>
-                        <span>JavaScript</span>
-                        <span>Express.js</span>
-                        <span>REST APIs</span>
-                        <span>OpenAI API</span>
-                        <span>HTML/CSS</span>
                     </div>
                 </div>
             </article>
@@ -273,6 +286,7 @@
                     </div>
                 </div>
             </article>
+
 
 
         </section>
